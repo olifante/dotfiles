@@ -150,13 +150,19 @@ export EDITOR='vim'
 export TERM='gnome-256color'
 
 # Are dotfiles clean?
-$HOME/bin/dotfiles
+if [ -x git ]; then
+    $HOME/bin/dotfiles
+fi
 
 # Load git token
-. $HOME/.githubconfig.sh
+if [ -x $HOME/.githubconfig.sh ]; then
+    . $HOME/.githubconfig.sh
+fi
 
 # Load z, a smart cd that learns your favorite directories
-. `brew --prefix`/etc/profile.d/z.sh
+if [ -x brew ]; then
+    . `brew --prefix`/etc/profile.d/z.sh
+fi
 
 # Turn on the Bash vi mode. Mouahahaha!
 set -o vi
