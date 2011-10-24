@@ -7,3 +7,5 @@
 # Bind history search on Up and Down keys.
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+
+set completion-ignore-case on
