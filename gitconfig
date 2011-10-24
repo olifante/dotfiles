@@ -9,6 +9,8 @@
 [user]
     name = Tiago Henriques
     email = tiago-g-henriques@telecom.pt
+[github]
+    user = olifante
 [alias]
     st = status
     ci = commit
@@ -33,5 +35,3 @@
     last = cat-file commit HEAD
     t = tag
     tl = tag -l
-[github]
-    user = olifante

@@ -30,27 +30,81 @@ if [[ -n "$PS1" ]] ; then
     GIT_PS1_SHOWDIRTYSTATE=true # Add Git dirty state mark to PS1
     GIT_PS1_SHOWSTASHSTATE=true # Show if something is stashed
     GIT_PS1_SHOWUNTRACKEDFILES=true # Show if there're untracked files
+    export GIT_AUTHOR_NAME="Tiago Henriques"
+    export GIT_COMMITTER_NAME="Tiago Henriques"
+    export GIT_AUTHOR_EMAIL="trinosauro@gmail.com"
+    export GIT_COMMITTER_EMAIL="trinosauro@gmail.com"
 
-    # set it to 'yes' if you want colored prompt
-    color_prompt=yes
+    export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
+    export GIT_BRANCH='$(echo $GIT)'
+    function set_prompt {
 
-    if [ "$color_prompt" = yes ]; then
-        # Colors ('[01;' for bold and '[00;' for non-bold)
-        # Gray    \[\033[01;30m\]
-        # Red     \[\033[01;31m\]
-        # Green   \[\033[01;32m\]
-        # Yellow  \[\033[01;33m\]
-        # Blue    \[\033[01;34m\]
-        # Magenta \[\033[01;35m\]
-        # Cyan    \[\033[01;36m\]
-        # White   \[\033[01;37m\]
-        # Normal  \[\033[00m\]
-        PS1='\[\033[01;37m\]$(date +%R)\[\033[00m\] \W$(__git_ps1 " (\[\033[00;31m\]%s\[\033[00m\])") \[\033[01;37m\]>\[\033[00m\] '
-    else
-        PS1='$(date +%R) \W$(__git_ps1) > '
-    fi
+        case $TERM in
+          xterm*)
+          local TITLEBAR='\[\033]0;\w\007\]'
+          ;;
+          *)
+          local TITLEBAR=""
+          ;;
+        esac
 
-    unset color_prompt
+        # set it to 'yes' if you want colored prompt
+        color_prompt=yes
+
+        if [ "$color_prompt" = yes ]; then
+            # Colors ('[1;' for bold and '[0;' for non-bold)
+            local          RED="\[\033[0;31m\]"
+            local        GREEN="\[\033[0;32m\]"
+            local       YELLOW="\[\033[0;33m\]"
+            local         BLUE="\[\033[0;34m\]"
+            local       PURPLE="\[\033[0;35m\]"
+            local         CYAN="\[\033[0;36m\]"
+            local   LIGHT_GRAY="\[\033[0;37m\]"
+            local    LIGHT_RED="\[\033[1;31m\]"
+            local  LIGHT_GREEN="\[\033[1;32m\]"
+            local LIGHT_YELLOW="\[\033[1;33m\]"
+            local   LIGHT_BLUE="\[\033[1;34m\]"
+            local LIGHT_PURPLE="\[\033[0;35m\]"
+            local   LIGHT_CYAN="\[\033[0;36m\]"
+            local        WHITE="\[\033[1;37m\]"
+            local    COLOR_OFF="\[\033[0m\]"
+        else
+            local          RED=""
+            local        GREEN=""
+            local       YELLOW=""
+            local         BLUE=""
+            local       PURPLE=""
+            local         CYAN=""
+            local   LIGHT_GRAY=""
+            local    LIGHT_RED=""
+            local  LIGHT_GREEN=""
+            local LIGHT_YELLOW=""
+            local   LIGHT_BLUE=""
+            local LIGHT_PURPLE=""
+            local   LIGHT_CYAN=""
+            local        WHITE=""
+            local    COLOR_OFF=""
+        fi
+
+        PS1="
+${TITLEBAR}\
+${COLOR_OFF}\
+\$ \
+$(echo \$?) \
+${LIGHT_GRAY}\
+\D{%Y-%m-%d %H:%M} \
+\u@\
+\h:\
+${BLUE}\
+\w \
+${GREEN}\
+${GIT_BRANCH}
+${COLOR_OFF}\
+\$ "
+
+        unset color_prompt
+    }
+    set_prompt
 
     # enable color support of ls and also add handy aliases
     if [ -x /usr/bin/dircolors ]; then
@@ -79,7 +133,7 @@ if [[ -n "$PS1" ]] ; then
     if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
         . /etc/bash_completion
     fi
-    
+
     if [[ -s "$HOME/bin/git-completion.sh" ]]; then
         source "$HOME/bin/git-completion.sh"
     fi
@@ -98,7 +152,11 @@ export TERM='gnome-256color'
 # Are dotfiles clean?
 $HOME/bin/dotfiles
 
+# Load git token
 . $HOME/.githubconfig.sh
+
+# Load z, a smart cd that learns your favorite directories
+. `brew --prefix`/etc/profile.d/z.sh
 
 # Turn on the Bash vi mode. Mouahahaha!
 set -o vi
