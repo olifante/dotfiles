@@ -31,9 +31,9 @@ if [[ -n "$PS1" ]] ; then
     GIT_PS1_SHOWSTASHSTATE=true # Show if something is stashed
     GIT_PS1_SHOWUNTRACKEDFILES=true # Show if there're untracked files
     export GIT_AUTHOR_NAME="Tiago Henriques"
-    export GIT_COMMITTER_NAME="Tiago Henriques"
     export GIT_AUTHOR_EMAIL="trinosauro@gmail.com"
-    export GIT_COMMITTER_EMAIL="trinosauro@gmail.com"
+    # export GIT_COMMITTER_NAME="Tiago Henriques"
+    # export GIT_COMMITTER_EMAIL="trinosauro@gmail.com"
 
     export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
     export GIT_BRANCH='$(echo $GIT)'
