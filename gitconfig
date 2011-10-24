@@ -33,3 +33,5 @@
     last = cat-file commit HEAD
     t = tag
     tl = tag -l
+[github]
+    user = olifante

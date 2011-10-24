@@ -103,5 +103,7 @@ export TERM='gnome-256color'
 # Are dotfiles clean?
 $HOME/bin/dotfiles
 
+. $HOME/.githubconfig.sh
+
 # Turn on the Bash vi mode. Mouahahaha!
 set -o vi
