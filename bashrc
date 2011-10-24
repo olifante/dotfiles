@@ -84,6 +84,10 @@ if [[ -n "$PS1" ]] ; then
     if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
         . /etc/bash_completion
     fi
+    
+    if [[ -s "$HOME/bin/git-completion.sh" ]]; then
+        source "$HOME/bin/git-completion.sh"
+    fi
 
 fi # end of 'if [[ -n "$PS1" ]] ; then'
 
@@ -97,7 +101,7 @@ export EDITOR='vim'
 export TERM='gnome-256color'
 
 # Are dotfiles clean?
-dotfiles
+$HOME/bin/dotfiles
 
 # Turn on the Bash vi mode. Mouahahaha!
 set -o vi
