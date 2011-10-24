@@ -35,8 +35,14 @@ if [[ -n "$PS1" ]] ; then
     # export GIT_COMMITTER_NAME="Tiago Henriques"
     # export GIT_COMMITTER_EMAIL="trinosauro@gmail.com"
 
-    export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
-    export GIT_BRANCH='$(echo $GIT)'
+    if [ -x git ]; then
+        export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
+        export GIT_BRANCH='$(echo $GIT)'
+    else
+        export PROMPT_COMMAND=""
+        export GIT_BRANCH=""
+    fi
+
     function set_prompt {
 
         case $TERM in
