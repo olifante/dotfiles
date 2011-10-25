@@ -36,10 +36,16 @@ if [[ -n "$PS1" ]] ; then
     # export GIT_COMMITTER_NAME="Tiago Henriques"
     # export GIT_COMMITTER_EMAIL="trinosauro@gmail.com"
 
-    if [ -x git ]; then
+    # hash returns 1 if command not found
+    hash git &> /dev/null
+    if [ $? -eq 0 ]; then
+        # git found
         export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
         export GIT_BRANCH='$(echo $GIT)'
+        # Are dotfiles clean?
+        $HOME/bin/dotfiles
     else
+        # git not found
         export PROMPT_COMMAND=""
         export GIT_BRANCH=""
     fi
@@ -156,18 +162,15 @@ export EDITOR='vim'
 # Set TERM for 256color support (install ncurses-term is a plus)
 export TERM='gnome-256color'
 
-# Are dotfiles clean?
-if [ -x git ]; then
-    $HOME/bin/dotfiles
-fi
-
 # Load git token
 if [ -x $HOME/.githubconfig.sh ]; then
     . $HOME/.githubconfig.sh
 fi
 
 # Load z, a smart cd that learns your favorite directories
-if [ -x brew ]; then
+hash brew &> /dev/null
+if [ $? -eq 0 ]; then
+    # brew found
     . `brew --prefix`/etc/profile.d/z.sh
 fi
 
