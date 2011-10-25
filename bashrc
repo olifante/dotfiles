@@ -26,10 +26,11 @@ if [[ -n "$PS1" ]] ; then
     # make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-    # Customize PS1 with Git routines
-    GIT_PS1_SHOWDIRTYSTATE=true # Add Git dirty state mark to PS1
-    GIT_PS1_SHOWSTASHSTATE=true # Show if something is stashed
-    GIT_PS1_SHOWUNTRACKEDFILES=true # Show if there're untracked files
+    # If you often cd into large repos, the following flags might slow you down.
+    # Uncomment these lines if you don't usually work with huge git repos
+    # GIT_PS1_SHOWDIRTYSTATE=true # Add Git dirty state mark to PS1
+    # GIT_PS1_SHOWSTASHSTATE=true # Show if something is stashed
+    # GIT_PS1_SHOWUNTRACKEDFILES=true # Show if there're untracked files
     export GIT_AUTHOR_NAME="Tiago Henriques"
     export GIT_AUTHOR_EMAIL="trinosauro@gmail.com"
     # export GIT_COMMITTER_NAME="Tiago Henriques"
