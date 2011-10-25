@@ -1,60 +1,12 @@
-# *****************************************
-#  .irbrc
-#
-#  Includes lots of nice stuff to make
-#  your irb and script/console ruby shell
-#  more pretty and productive
-#
-# *****************************************
-
-require 'irb/ext/save-history'
-# ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
-
 # ----------------------------------------
-#  Most stuff depends on Rubygems being loaded
+# load gems
 # ----------------------------------------
-begin
-  require 'rubygems'
-rescue LoadError => err
-  warn "Couldn't load Rubygems: #{err}"
-end
-
-# ----------------------------------------
-#  Method to clean up hash output
-# ----------------------------------------
-begin
-  require 'pp'
-rescue LoadError => err
-  warn "Couldn't load Pretty-Print: #{err}"
-end
-
-# ----------------------------------------
-#  Awesome Print is Awesome
-# ----------------------------------------
-begin
-  require 'ap'
-rescue LoadError => err
-  warn "Coundn't load Awesome Print: #{err}"
-end
-
-# ----------------------------------------
-#  Tab completion
-# ----------------------------------------
-begin
-  require 'irb/completion'
-rescue LoadError => err
-  warn "Couldn't load irb/completion: #{err}"
-end
-
-# ---------------------------------------
-#  Hirb - Pretty ActiveRecord tables in a
-#         mysql console table view.
-# ---------------------------------------
-begin
-  require 'hirb'
-  Hirb.enable
-rescue LoadError => err
-  warn "Couldn't load Hirb: #{err}"
+%w{rubygems hirb pp ap irb/ext/save-history irb/completion}.each do |lib| 
+  begin 
+    require lib 
+  rescue LoadError => err
+    $stderr.puts "Couldn't load #{lib}: #{err}"
+  end
 end
 
 # ----------------------------------------
@@ -70,62 +22,6 @@ begin
   Wirble.colorize
 rescue LoadError => err
   warn "Couldn't load Wirble: #{err}"
-end
-
-# ----------------------------------------
-#  Set IRB prompt to include project name and env (Rails)
-#  app_name[development]> or app_name[production]>, etc...
-# ----------------------------------------
-if ENV['RAILS_ENV']
-  rails_root = File.basename(Dir.pwd)
-  prompt = "#{rails_root}[#{ENV['RAILS_ENV']}]"
-  IRB.conf[:PROMPT] ||= {}
-  IRB.conf[:PROMPT][:RAILS] = {
-    :PROMPT_I => "#{prompt}> ",
-    :PROMPT_S => "#{prompt}* ",
-    :PROMPT_C => "#{prompt}? ",
-    :RETURN => "=> %s\n"
-  }
-  IRB.conf[:PROMPT_MODE] = :RAILS
-end
-
-# ----------------------------------------
-#  Cool stuff just for Rails console
-# ----------------------------------------
-if ENV['RAILS_ENV']
-  IRB.conf[:IRB_RC] = Proc.new do
-    # Alias User[3] for User.find(3) in Rails
-    ActiveRecord::Base.instance_eval { alias :[] :find }
-    # Cause queries to log to console
-    # ActiveRecord::Base.logger = Logger.new(STDOUT)
-  end
-end
-
-# ---------------------------------------
-#  allows you to say 'helper :application' in your
-#  Rails app, then you can use helpers by calling
-#  helper.helper_name on the console
-#  http://errtheblog.com/posts/41-real-console-helpers
-# ---------------------------------------
-if ENV['RAILS_ENV']
-  def Object.method_added(method)
-    return super(method) unless method == :helper
-    (class<<self;self;end).send(:remove_method, :method_added)
-
-    def helper(*helper_names)
-      ($helper_proxy ||= Object.new).tap do |helper|
-        helper_names.each { |h| helper.extend "#{h}_helper".classify.constantize }
-      end
-    end
-
-    helper.instance_variable_set("@controller", ActionController::Integration::Session.new)
-
-    def helper.method_missing(method, *args, &block)
-      @controller.send(method, *args, &block) if @controller && method.to_s =~ /_path$|_url$/
-    end
-
-    helper :application rescue nil
-  end
 end
 
 # ---------------------------------------
