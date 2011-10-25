@@ -39,3 +39,5 @@
 	default = tracking
 [branch]
 	autosetuprebase = always
+[branch "master"]
+	rebase = true
