@@ -104,8 +104,8 @@ ${TITLEBAR}\
 ${COLOR_OFF}\
 \$ \
 $(echo \$?) \
-${LIGHT_GRAY}\
-\D{%Y-%m-%d %H:%M} \
+${LIGHT_CYAN}\
+\D{%H:%M} \
 \u@\
 \h:\
 ${BLUE}\
