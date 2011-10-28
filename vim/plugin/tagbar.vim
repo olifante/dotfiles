@@ -35,7 +35,7 @@ if !exists('g:tagbar_ctags_bin')
     elseif executable('tags')
         let g:tagbar_ctags_bin = 'tags'
     else
-        echomsg 'Tagbar: Exuberant ctags not found, skipping plugin'
+        "echomsg 'Tagbar: Exuberant ctags not found, skipping plugin'
         finish
     endif
 endif
