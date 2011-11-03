@@ -17,10 +17,12 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
+if [ -d "/Developer/usr/bin" ] ; then
+    PATH="/Developer/usr/bin:$PATH"
+fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
 if [ -d "/usr/local/share/python" ] ; then
     PATH="/usr/local/share/python:$PATH"
 fi
