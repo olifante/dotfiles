@@ -35,6 +35,12 @@
     last = cat-file commit HEAD
     t = tag
     tl = tag -l
+    add-unmerged = \
+        "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+            # "!f() { git status --porcelain | grep '^[ADU][ADU]' | cut -d' ' -f2 }; git add `f`"
+    edit-unmerged = \
+        "!f() { git ls-files --unmerged | cut -f2 | sort -u }; mate `f`"
+            # "!f() { git status --porcelain | grep '^UU' | cut -d' ' -f2 }; mate `f`"
 [push]
 	default = tracking
 [branch]
