@@ -31,7 +31,8 @@
     ba = branch -a
     br = branch -r
     s = status -sb
-    l = log --pretty=oneline --abbrev-commit -10
+    l = log --graph --decorate --pretty=oneline --abbrev-commit -20
+    d = diff
     last = cat-file commit HEAD
     t = tag
     tl = tag -l
