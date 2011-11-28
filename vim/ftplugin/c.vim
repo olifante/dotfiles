@@ -17,7 +17,7 @@ syn keyword cOperator likely unlikely
 
 syn match ErrorMsg /^ \+/        " highlight any leading spaces
 syn match ErrorMsg /\s\+$/       " highlight any trailing spaces
-match ErrorMsg     /\%>80v.\+/   " highlight anything past 80 in red
+"match ErrorMsg     /\%>80v.\+/   " highlight anything past 80 in red
 
 set formatoptions=tcqlron
 set cinoptions=:0,l1,t0,g0
