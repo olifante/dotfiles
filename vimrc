@@ -24,11 +24,11 @@ set modeline               " Allow vim config in comments
 " Theme
 """""""
 set background=light
-"colorscheme wombat
+colorscheme textmate
 
 " Cursor
 """"""""
-"set cursorline
+set cursorline
 "set cursorcolumn
 " last position jump. note that your ~/.viminfo should be owned by you.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
