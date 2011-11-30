@@ -68,6 +68,10 @@ nmap <C-i> vip=
 imap <C-@> <C-n>
 map <C-Tab> gt
 map <C-S-Tab> gT
+" prevent vim from deselecting block after dedent or indent
+vnoremap < <gv
+vnoremap > >gv
+
 
 " Indentation (I use 4 spaces indentation by default).
 """""""""""""
