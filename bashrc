@@ -26,6 +26,11 @@ if [[ -n "$PS1" ]] ; then
     # make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+    GIT_COMPLETION="$HOME/bin/git-completion.bash"
+    if [[ -s "$GIT_COMPLETION" ]]; then
+        source "$GIT_COMPLETION"
+    fi
+
     # If you often cd into large repos, the following flags might slow you down.
     # Uncomment these lines if you don't usually work with huge git repos
     # GIT_PS1_SHOWDIRTYSTATE=true # Add Git dirty state mark to PS1
@@ -40,7 +45,10 @@ if [[ -n "$PS1" ]] ; then
     hash git &> /dev/null
     if [ $? -eq 0 ]; then
         # git found
-        export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
+	    hash __git_ps1 &> /dev/null
+	    if [ $? -eq 0 ]; then
+        	export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
+		fi
         export GIT_BRANCH='$(echo $GIT)'
         # Are dotfiles clean?
         $HOME/bin/dotfiles
@@ -143,11 +151,6 @@ ${COLOR_OFF}\
 	BASH_COMPLETION="/etc/bash_completion"
     if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
         source "$BASH_COMPLETION"
-    fi
-
-	GIT_COMPLETION="$HOME/bin/git-completion.sh"
-    if [[ -s "$GIT_COMPLETION" ]]; then
-        source "$GIT_COMPLETION"
     fi
 
 fi # end of 'if [[ -n "$PS1" ]] ; then'

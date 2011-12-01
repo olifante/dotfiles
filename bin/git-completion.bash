@@ -1259,9 +1259,12 @@ _git_commit ()
 			" "" "${cur##--cleanup=}"
 		return
 		;;
-	--reuse-message=*|--reedit-message=*|\
-	--fixup=*|--squash=*)
-		__gitcomp "$(__git_refs)" "" "${cur#*=}"
+	--reuse-message=*)
+		__gitcomp "$(__git_refs)" "" "${cur##--reuse-message=}"
+		return
+		;;
+	--reedit-message=*)
+		__gitcomp "$(__git_refs)" "" "${cur##--reedit-message=}"
 		return
 		;;
 	--untracked-files=*)
@@ -1275,7 +1278,7 @@ _git_commit ()
 			--dry-run --reuse-message= --reedit-message=
 			--reset-author --file= --message= --template=
 			--cleanup= --untracked-files --untracked-files=
-			--verbose --quiet --fixup= --squash=
+			--verbose --quiet
 			"
 		return
 	esac
@@ -1466,7 +1469,7 @@ _git_help ()
 	__gitcomp "$__git_all_commands $(__git_aliases)
 		attributes cli core-tutorial cvs-migration
 		diffcore gitk glossary hooks ignore modules
-		namespaces repository-layout tutorial tutorial-2
+		repository-layout tutorial tutorial-2
 		workflows
 		"
 }
@@ -1553,9 +1556,14 @@ _git_log ()
 		merge="--merge"
 	fi
 	case "$cur" in
-	--pretty=*|--format=*)
+	--pretty=*)
 		__gitcomp "$__git_log_pretty_formats $(__git_pretty_aliases)
-			" "" "${cur#*=}"
+			" "" "${cur##--pretty=}"
+		return
+		;;
+	--format=*)
+		__gitcomp "$__git_log_pretty_formats $(__git_pretty_aliases)
+			" "" "${cur##--format=}"
 		return
 		;;
 	--date=*)
@@ -1663,9 +1671,11 @@ _git_notes ()
 			;;
 		esac
 		;;
-	add,--reuse-message=*|append,--reuse-message=*|\
+	add,--reuse-message=*|append,--reuse-message=*)
+		__gitcomp "$(__git_refs)" "" "${cur##--reuse-message=}"
+		;;
 	add,--reedit-message=*|append,--reedit-message=*)
-		__gitcomp "$(__git_refs)" "" "${cur#*=}"
+		__gitcomp "$(__git_refs)" "" "${cur##--reedit-message=}"
 		;;
 	add,--*|append,--*)
 		__gitcomp '--file= --message= --reedit-message=
@@ -1723,7 +1733,7 @@ _git_push ()
 	--*)
 		__gitcomp "
 			--all --mirror --tags --dry-run --force --verbose
-			--receive-pack= --repo= --set-upstream
+			--receive-pack= --repo=
 		"
 		return
 		;;
@@ -2360,9 +2370,14 @@ _git_show ()
 	__git_has_doubledash && return
 
 	case "$cur" in
-	--pretty=*|--format=*)
+	--pretty=*)
 		__gitcomp "$__git_log_pretty_formats $(__git_pretty_aliases)
-			" "" "${cur#*=}"
+			" "" "${cur##--pretty=}"
+		return
+		;;
+	--format=*)
+		__gitcomp "$__git_log_pretty_formats $(__git_pretty_aliases)
+			" "" "${cur##--format=}"
 		return
 		;;
 	--*)
@@ -2625,7 +2640,6 @@ _git ()
 			--exec-path
 			--html-path
 			--work-tree=
-			--namespace=
 			--help
 			"
 			;;
