@@ -66,21 +66,21 @@ if [[ -n "$PS1" ]] ; then
 
         if [ "$color_prompt" = yes ]; then
             # Colors ('[1;' for bold and '[0;' for non-bold)
-            local          RED="\[\033[0;31m\]"
-            local        GREEN="\[\033[0;32m\]"
-            local       YELLOW="\[\033[0;33m\]"
-            local         BLUE="\[\033[0;34m\]"
-            local       PURPLE="\[\033[0;35m\]"
-            local         CYAN="\[\033[0;36m\]"
-            local   LIGHT_GRAY="\[\033[0;37m\]"
-            local    LIGHT_RED="\[\033[1;31m\]"
-            local  LIGHT_GREEN="\[\033[1;32m\]"
-            local LIGHT_YELLOW="\[\033[1;33m\]"
-            local   LIGHT_BLUE="\[\033[1;34m\]"
-            local LIGHT_PURPLE="\[\033[0;35m\]"
-            local   LIGHT_CYAN="\[\033[0;36m\]"
-            local        WHITE="\[\033[1;37m\]"
-            local    COLOR_OFF="\[\033[0m\]"
+            local          RED="\[\e[0;31m\]"
+            local        GREEN="\[\e[0;32m\]"
+            local       YELLOW="\[\e[0;33m\]"
+            local         BLUE="\[\e[0;34m\]"
+            local       PURPLE="\[\e[0;35m\]"
+            local         CYAN="\[\e[0;36m\]"
+            local   LIGHT_GRAY="\[\e[0;37m\]"
+            local    LIGHT_RED="\[\e[1;31m\]"
+            local  LIGHT_GREEN="\[\e[1;32m\]"
+            local LIGHT_YELLOW="\[\e[1;33m\]"
+            local   LIGHT_BLUE="\[\e[1;34m\]"
+            local LIGHT_PURPLE="\[\e[1;35m\]"
+            local   LIGHT_CYAN="\[\e[1;36m\]"
+            local        WHITE="\[\e[1;37m\]"
+            local    COLOR_OFF="\[\e[0m\]"
         else
             local          RED=""
             local        GREEN=""
@@ -103,8 +103,8 @@ if [[ -n "$PS1" ]] ; then
 ${TITLEBAR}\
 ${COLOR_OFF}\
 \$ \
-$(echo \$?) \
-${LIGHT_CYAN}\
+\`if [ \$? = 0 ]; then echo \[\e[37m\]^_^ \$?\[\e[0m\]; else echo \[\e[31m\]O_O\ \$?\[\e[0m\]; fi\` \
+${CYAN}\
 \D{%H:%M} \
 \u@\
 \h:\
