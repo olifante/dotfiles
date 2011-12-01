@@ -162,6 +162,15 @@ export EDITOR='vim'
 # Set TERM for 256color support (install ncurses-term is a plus)
 export TERM='gnome-256color'
 
+export WORKON_HOME=$HOME/.virtualenvs
+VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
+[[ -s "$VIRTUALENVWRAPPER" ]] && source "$VIRTUALENVWRAPPER"
+
+export CLASSPATH=$CLASSPATH:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
+
+export NARWHAL_ENGINE=jsc
+export CAPP_BUILD="$HOME/git/cappuccino/Build"
+
 # Load git token
 if [ -x $HOME/.githubconfig.sh ]; then
     . $HOME/.githubconfig.sh
