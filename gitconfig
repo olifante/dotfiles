@@ -7,8 +7,10 @@
 [core]
     editor = vim
 [user]
-    name = Tiago Henriques
-    email = tiago-g-henriques@telecom.pt
+    name = olifante
+    email = trinosauro@gmail.com
+    #name = Tiago Henriques
+    #email = tiago-g-henriques@telecom.pt
 [github]
     user = olifante
 [alias]
