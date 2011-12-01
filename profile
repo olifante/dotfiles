@@ -12,20 +12,27 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+		source "$HOME/.bashrc"
     fi
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "/Developer/usr/bin" ] ; then
+if [ -d "/Developer/usr/bin" ]; then
     PATH="/Developer/usr/bin:$PATH"
 fi
-if [ -d "$HOME/bin" ] ; then
+
+if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
-if [ -d "/usr/local/share/python" ] ; then
+
+if [ -d "/usr/local/share/python" ]; then
     PATH="/usr/local/share/python:$PATH"
 fi
-if [ -d "/usr/local/bin" ] ; then
+
+if [ -d "/usr/local/bin" ]; then
     PATH="/usr/local/bin:$PATH"
+fi
+
+if [ -d "$HOME/narwhal/bin" ]; then
+    PATH="$HOME/narwhal/bin":$PATH
 fi

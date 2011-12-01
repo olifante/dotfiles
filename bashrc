@@ -121,11 +121,8 @@ ${COLOR_OFF}\
 
     # enable color support of ls and also add handy aliases
     if [ -x /usr/bin/dircolors ]; then
-        test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+        test -r "$HOME/.dircolors" && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
         alias ls='ls --color=auto'
-        #alias dir='dir --color=auto'
-        #alias vdir='vdir --color=auto'
-
         alias grep='grep --color=auto'
         alias fgrep='fgrep --color=auto'
         alias egrep='egrep --color=auto'
@@ -135,26 +132,29 @@ ${COLOR_OFF}\
     # You may want to put all your additions into a separate file like
     # ~/.bash_aliases, instead of adding them here directly.
     # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-    if [ -f ~/.bash_aliases ]; then
-        . ~/.bash_aliases
+	BASH_ALIASES="$HOME/.bash_aliases"
+    if [ -f "$BASH_ALIASES" ]; then
+        source "$BASH_ALIASES"
     fi
 
     # enable programmable completion features (you don't need to enable
     # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
     # sources /etc/bash.bashrc).
-    if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-        . /etc/bash_completion
+	BASH_COMPLETION="/etc/bash_completion"
+    if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
+        source "$BASH_COMPLETION"
     fi
 
-    if [[ -s "$HOME/bin/git-completion.sh" ]]; then
-        source "$HOME/bin/git-completion.sh"
+	GIT_COMPLETION="$HOME/bin/git-completion.sh"
+    if [[ -s "$GIT_COMPLETION" ]]; then
+        source "$GIT_COMPLETION"
     fi
 
 fi # end of 'if [[ -n "$PS1" ]] ; then'
 
 # This is a good place to source rvm v v v (loads RVM into a shell session).
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+RVM="$HOME/.rvm/scripts/rvm"
+[[ -s "$RVM" ]] && source "$RVM"
 
 # Set the EDITOR variable
 export EDITOR='vim'
@@ -172,15 +172,19 @@ export NARWHAL_ENGINE=jsc
 export CAPP_BUILD="$HOME/git/cappuccino/Build"
 
 # Load git token
-if [ -x $HOME/.githubconfig.sh ]; then
-    . $HOME/.githubconfig.sh
+GITHUBCONFIG="$HOME/.githubconfig.sh"
+if [ -x "$GITHUBCONFIG" ]; then
+    source "$GITHUBCONFIG"
 fi
 
 # Load z, a smart cd that learns your favorite directories
 hash brew &> /dev/null
 if [ $? -eq 0 ]; then
     # brew found
-    . `brew --prefix`/etc/profile.d/z.sh
+	Z_SCRIPT=`brew --prefix`/etc/profile.d/z.sh
+	if [ -x "$Z_SCRIPT" ]; then
+		source "$Z_SCRIPT"
+	fi
 fi
 
 # Turn on the Bash vi mode. Mouahahaha!
