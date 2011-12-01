@@ -1,1 +1,33 @@
+## copied from https://github.com/claytron/dotfiles/blob/master/.ackrc
+# General Ack Settings
+####################################################################
+
+# only search with case sensitivity if there is mixed case
+--smart-case
+# follow symlinks
+--follow
+
+# Ack Type Settings
+####################################################################
+
+# add some more zope files to the plone type
+--type-add=plone=.zcml,.props,.dtml,.vpy,.kss
+# add specific type for page templates
+--type-set=zpt=.pt,.cpt
+# add .cfg for buildout files
+--type-set=buildout=.cfg
+# add a specific type for ZCML files
+--type-set=zcml=.zcml
+# add markdown, textile, and reStructuredText
+--type-set=plaintext=.md,.mdown,.markdown,.mkdn,.textile,.rst,.txt
+# plain text CSV files
+--type-set=csv=.txt,.csv,.tsv
+# add in a type for gettext messages
+--type-set=gettext=.pot,.po
+# XIB files
 --type-set=xib=.xib,.nib
+# Audio files
+--type-set=audio=.wav,.aiff,.aif,.mp3
+
+# types to ignore by default
+--nogettext
