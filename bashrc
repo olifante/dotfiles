@@ -4,7 +4,6 @@
 
 # If not running interactively, don't do anything
 if [[ -n "$PS1" ]] ; then
-
     # ignore ls, bg, fg, exit commands
     export HISTIGNORE="ls:[bf]g:exit"
 
@@ -140,7 +139,7 @@ ${COLOR_OFF}\
     # You may want to put all your additions into a separate file like
     # ~/.bash_aliases, instead of adding them here directly.
     # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-	BASH_ALIASES="$HOME/.bash_aliases"
+    BASH_ALIASES="$HOME/.bash_aliases"
     if [ -f "$BASH_ALIASES" ]; then
         source "$BASH_ALIASES"
     fi
@@ -148,47 +147,47 @@ ${COLOR_OFF}\
     # enable programmable completion features (you don't need to enable
     # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
     # sources /etc/bash.bashrc).
-	BASH_COMPLETION="/etc/bash_completion"
+    BASH_COMPLETION="/etc/bash_completion"
     if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
         source "$BASH_COMPLETION"
     fi
 
+    # This is a good place to source rvm v v v (loads RVM into a shell session).
+    RVM="$HOME/.rvm/scripts/rvm"
+    [[ -s "$RVM" ]] && source "$RVM"
+
+    # Set the EDITOR variable
+    export EDITOR='vim'
+
+    # Set TERM for 256color support (install ncurses-term is a plus)
+    export TERM='gnome-256color'
+
+    export WORKON_HOME=$HOME/.virtualenvs
+    VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
+    [[ -s "$VIRTUALENVWRAPPER" ]] && source "$VIRTUALENVWRAPPER"
+
+    export CLASSPATH=$CLASSPATH:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
+
+    export NARWHAL_ENGINE=jsc
+    export CAPP_BUILD="$HOME/git/cappuccino/Build"
+
+    # Load git token
+    GITHUBCONFIG="$HOME/.githubconfig.sh"
+    if [ -x "$GITHUBCONFIG" ]; then
+        source "$GITHUBCONFIG"
+    fi
+
+    # Load z, a smart cd that learns your favorite directories
+    hash brew &> /dev/null
+    if [ $? -eq 0 ]; then
+        # brew found
+    	Z_SCRIPT=`brew --prefix`/etc/profile.d/z.sh
+    	if [ -x "$Z_SCRIPT" ]; then
+    		source "$Z_SCRIPT"
+    	fi
+    fi
+
+    # Turn on the Bash vi mode. Mouahahaha!
+    set -o vi
 fi # end of 'if [[ -n "$PS1" ]] ; then'
 
-# This is a good place to source rvm v v v (loads RVM into a shell session).
-RVM="$HOME/.rvm/scripts/rvm"
-[[ -s "$RVM" ]] && source "$RVM"
-
-# Set the EDITOR variable
-export EDITOR='vim'
-
-# Set TERM for 256color support (install ncurses-term is a plus)
-export TERM='gnome-256color'
-
-export WORKON_HOME=$HOME/.virtualenvs
-VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
-[[ -s "$VIRTUALENVWRAPPER" ]] && source "$VIRTUALENVWRAPPER"
-
-export CLASSPATH=$CLASSPATH:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
-
-export NARWHAL_ENGINE=jsc
-export CAPP_BUILD="$HOME/git/cappuccino/Build"
-
-# Load git token
-GITHUBCONFIG="$HOME/.githubconfig.sh"
-if [ -x "$GITHUBCONFIG" ]; then
-    source "$GITHUBCONFIG"
-fi
-
-# Load z, a smart cd that learns your favorite directories
-hash brew &> /dev/null
-if [ $? -eq 0 ]; then
-    # brew found
-	Z_SCRIPT=`brew --prefix`/etc/profile.d/z.sh
-	if [ -x "$Z_SCRIPT" ]; then
-		source "$Z_SCRIPT"
-	fi
-fi
-
-# Turn on the Bash vi mode. Mouahahaha!
-set -o vi
