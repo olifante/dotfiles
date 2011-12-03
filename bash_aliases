@@ -47,3 +47,16 @@ alias timestamp='date "+%Y-%m-%d_%H:%M:%S"'
 alias h='history'
 
 alias ri='ri -Tf ansi'
+
+alias ..='cd ..'
+alias ...='cd ..; cd ..'
+alias ....='cd ..; cd ..; cd ..'
+alias .....='cd ..; cd ..; cd ..; cd ..'
+
+# Misc
+alias g='grep -i'  # Case insensitive grep
+alias f='find . -iname'
+alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
+alias top='top -o cpu'
+alias systail='tail -f /var/log/system.log'
+alias m='more'
