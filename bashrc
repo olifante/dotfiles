@@ -4,6 +4,24 @@
 
 # If not running interactively, don't do anything
 if [[ -n "$PS1" ]] ; then
+    # append to the history file, don't overwrite it
+    shopt -s histappend
+
+    # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+
+    # check the window size after each command and, if necessary,
+    # update the values of LINES and COLUMNS.
+    shopt -s checkwinsize
+
+	shopt -s cdspell
+	shopt -s cmdhist
+	shopt -s extglob
+	shopt -s no_empty_cmd_completion
+	shopt -s progcomp
+	shopt -s hostcomplete
+	shopt -s interactive_comments
+	shopt -s promptvars
+
     export LESS="--quit-at-eof --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --squeeze-blank-lines"
     export PAGER=less
 
@@ -29,15 +47,6 @@ if [[ -n "$PS1" ]] ; then
     HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
     # ... or force ignoredups and ignorespace
     HISTCONTROL=ignoreboth
-
-    # append to the history file, don't overwrite it
-    shopt -s histappend
-
-    # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-
-    # check the window size after each command and, if necessary,
-    # update the values of LINES and COLUMNS.
-    shopt -s checkwinsize
 
     # make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -161,14 +170,6 @@ ${COLOR_OFF}\
         source "$BASH_ALIASES"
     fi
 
-    # enable programmable completion features (you don't need to enable
-    # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-    # sources /etc/bash.bashrc).
-    BASH_COMPLETION="/etc/bash_completion"
-    if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
-        source "$BASH_COMPLETION"
-    fi
-
     # This is a good place to source rvm v v v (loads RVM into a shell session).
     RVM="$HOME/.rvm/scripts/rvm"
     [[ -s "$RVM" ]] && source "$RVM"
@@ -200,8 +201,14 @@ ${COLOR_OFF}\
         # brew found
     	Z_SCRIPT=`brew --prefix`/etc/profile.d/z.sh
     	if [ -x "$Z_SCRIPT" ]; then
+			# install with "brew install z"
     		source "$Z_SCRIPT"
     	fi
+		BASH_COMPLETION=`brew --prefix`/etc/bash_completion
+        if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
+			# install with "brew install bash_completion"
+            source "$BASH_COMPLETION"
+        fi
     fi
 
     # Turn on the Bash vi mode. Mouahahaha!
