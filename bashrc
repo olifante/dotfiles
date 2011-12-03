@@ -4,6 +4,23 @@
 
 # If not running interactively, don't do anything
 if [[ -n "$PS1" ]] ; then
+    export LESS="--quit-at-eof --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --squeeze-blank-lines"
+    export PAGER=less
+
+    #; Setup the SSH auth socket for the SSH agent.
+    SSHDIR="${HOME}/.ssh"
+    SSH_AUTH_SOCK="${SSHDIR}/.ssh-agent-socket"
+    export SSHDIR SSH_AUTH_SOCK
+    
+    if [ ! -S $SSH_AUTH_SOCK ]; then
+		ssh-agent -a $SSH_AUTH_SOCK
+		ssh-add
+    fi
+
+    sscreen () {
+		ssh -t ${1} /usr/local/bin/screen -xRR
+    }
+
     # ignore ls, bg, fg, exit commands
     export HISTIGNORE="ls:[bf]g:exit"
 
