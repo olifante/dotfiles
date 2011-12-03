@@ -90,3 +90,19 @@ IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 IRB.conf[:AUTO_INDENT]  = true
 IRB.conf[:PROMPT_MODE]  = :DEFAULT
+
+def ri arg
+  puts `ri -Tf ansi #{arg}`
+end
+
+class Module 
+  def ri(meth=nil) 
+    if meth 
+      if instance_methods(false).include? meth.to_s 
+    puts `ri -Tf ansi #{self}##{meth}` 
+      end 
+    else 
+      puts `ri #{self}` 
+    end 
+  end 
+end
