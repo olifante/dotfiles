@@ -88,8 +88,38 @@ end
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
-IRB.conf[:AUTO_INDENT]  = true
+IRB.conf[:AUTO_INDENT] = false
+IRB.conf[:USE_READLINE] = true
 IRB.conf[:PROMPT_MODE]  = :DEFAULT
+
+red       = "[31m"
+green     = "[32m"
+yellow    = "[33m"
+blue      = "[34m"
+cyan      = "[36m"
+bold      = "[1m"
+nobold    = "[22m"
+reset     = "[0m"
+
+IRB.conf[:PROMPT][:COLOR] = {
+  # normal prompt
+  :PROMPT_I => "#{reset}#{green}#{bold}%N(%m):#{reset}%03n#{green}:%i>#{reset} ",  
+  :PROMPT_N => "#{reset}#{green}%N(%m):#{reset}%03n#{green}:%i>#{reset} ",  
+  # prompt for continuing strings 
+  :PROMPT_S => "#{reset}#{green}%N(%m):#{reset}%03n#{green}:%i%l#{reset} ",  
+  # prompt for continuing statement
+  :PROMPT_C => "#{reset}#{green}%N(%m):#{reset}%03n#{green}:%i*#{reset} ",  
+  # format to return value
+  #:RETURN => "#{reset}#{red}=> %s\n#{reset}"              
+  :RETURN => "#{reset}#{red}=> %s\n#{reset}"              
+}
+
+IRB.conf[:IRB_RC] = proc do |conf|
+  conf.prompt_mode = :COLOR
+#  conf.prompt_i = '>> '
+#  conf.prompt_c = '-> '
+#  conf.prompt_s = '-> '
+end
 
 def ri arg
   puts `ri -Tf ansi #{arg}`
