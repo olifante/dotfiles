@@ -61,10 +61,17 @@ if [[ -n "$PS1" ]] ; then
     # GIT_PS1_SHOWDIRTYSTATE=true # Add Git dirty state mark to PS1
     # GIT_PS1_SHOWSTASHSTATE=true # Show if something is stashed
     # GIT_PS1_SHOWUNTRACKEDFILES=true # Show if there're untracked files
-    # export GIT_AUTHOR_NAME="Tiago Henriques"
-    # export GIT_AUTHOR_EMAIL="trinosauro@gmail.com"
-    # export GIT_COMMITTER_NAME="Tiago Henriques"
-    # export GIT_COMMITTER_EMAIL="trinosauro@gmail.com"
+    if [ $HOSTNAME = "cactus.sapo.corppt.com" ]; then
+        export GIT_AUTHOR_NAME="Tiago Henriques"
+        export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
+        export GIT_AUTHOR_EMAIL="tiago-g-henriques@telecom.pt"
+        export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
+    else
+        export GIT_AUTHOR_NAME="Tiago Henriques"
+        export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
+        export GIT_AUTHOR_EMAIL="trinosauro@gmail.com"
+        export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
+    fi
 
     # hash returns 1 if command not found
     hash git &> /dev/null
