@@ -13,14 +13,14 @@ if [[ -n "$PS1" ]] ; then
     # update the values of LINES and COLUMNS.
     shopt -s checkwinsize
 
-	shopt -s cdspell
-	shopt -s cmdhist
-	shopt -s extglob
-	shopt -s no_empty_cmd_completion
-	shopt -s progcomp
-	shopt -s hostcomplete
-	shopt -s interactive_comments
-	shopt -s promptvars
+    shopt -s cdspell
+    shopt -s cmdhist
+    shopt -s extglob
+    shopt -s no_empty_cmd_completion
+    shopt -s progcomp
+    shopt -s hostcomplete
+    shopt -s interactive_comments
+    shopt -s promptvars
 
     export LESS="--quit-at-eof --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --squeeze-blank-lines"
     export PAGER=less
@@ -31,12 +31,12 @@ if [[ -n "$PS1" ]] ; then
     export SSHDIR SSH_AUTH_SOCK
     
     if [ ! -S $SSH_AUTH_SOCK ]; then
-		ssh-agent -a $SSH_AUTH_SOCK
-		ssh-add
+        ssh-agent -a $SSH_AUTH_SOCK
+        ssh-add
     fi
 
     sscreen () {
-		ssh -t ${1} /usr/local/bin/screen -xRR
+        ssh -t ${1} /usr/local/bin/screen -xRR
     }
 
     # ignore ls, bg, fg, exit commands
@@ -77,10 +77,10 @@ if [[ -n "$PS1" ]] ; then
     hash git &> /dev/null
     if [ $? -eq 0 ]; then
         # git found
-	    hash __git_ps1 &> /dev/null
-	    if [ $? -eq 0 ]; then
-        	export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
-		fi
+        hash __git_ps1 &> /dev/null
+        if [ $? -eq 0 ]; then
+            export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
+        fi
         export GIT_BRANCH='$(echo $GIT)'
         # Are dotfiles clean?
         $HOME/bin/dotfiles
@@ -187,12 +187,15 @@ ${COLOR_OFF}\
     # Set TERM for 256color support (install ncurses-term is a plus)
     export TERM='gnome-256color'
 
+    # Define virtualenv variables
     export WORKON_HOME=$HOME/.virtualenvs
     VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
     [[ -s "$VIRTUALENVWRAPPER" ]] && source "$VIRTUALENVWRAPPER"
 
+    # Add classpath for Clojure
     export CLASSPATH=$CLASSPATH:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
 
+    # Define variables for Cappuccino development
     export NARWHAL_ENGINE=jsc
     export CAPP_BUILD="$HOME/git/cappuccino/Build"
 
@@ -202,18 +205,19 @@ ${COLOR_OFF}\
         source "$GITHUBCONFIG"
     fi
 
-    # Load z, a smart cd that learns your favorite directories
+    # If brew found
     hash brew &> /dev/null
     if [ $? -eq 0 ]; then
-        # brew found
-    	Z_SCRIPT=`brew --prefix`/etc/profile.d/z.sh
-    	if [ -x "$Z_SCRIPT" ]; then
-			# install with "brew install z"
-    		source "$Z_SCRIPT"
-    	fi
-		BASH_COMPLETION=`brew --prefix`/etc/bash_completion
+        # Load z, a smart cd that learns your favorite directories
+        Z_SCRIPT=`brew --prefix`/etc/profile.d/z.sh
+        if [ -x "$Z_SCRIPT" ]; then
+            # install with "brew install z"
+            source "$Z_SCRIPT"
+        fi
+        # Load programmable bash completion
+        BASH_COMPLETION=`brew --prefix`/etc/bash_completion
         if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
-			# install with "brew install bash_completion"
+            # install with "brew install bash_completion"
             source "$BASH_COMPLETION"
         fi
     fi
