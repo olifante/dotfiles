@@ -6,11 +6,7 @@
     # ui = true
 [core]
     editor = vim
-[user]
-    name = olifante
-    email = trinosauro@gmail.com
-    #name = Tiago Henriques
-    #email = tiago-g-henriques@telecom.pt
+	quotepath = false
 [github]
     user = olifante
 [alias]
