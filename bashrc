@@ -195,6 +195,8 @@ ${COLOR_OFF}\
     # Add classpath for Clojure
     export CLASSPATH=$CLASSPATH:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
 
+    export PYTHONSTARTUP=$HOME/.pythonrc.py
+
     # Define variables for Cappuccino development
     export NARWHAL_ENGINE=jsc
     export CAPP_BUILD="$HOME/git/cappuccino/Build"
