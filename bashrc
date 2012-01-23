@@ -61,7 +61,7 @@ if [[ -n "$PS1" ]] ; then
     # GIT_PS1_SHOWDIRTYSTATE=true # Add Git dirty state mark to PS1
     # GIT_PS1_SHOWSTASHSTATE=true # Show if something is stashed
     # GIT_PS1_SHOWUNTRACKEDFILES=true # Show if there're untracked files
-    if [[ $HOSTNAME =~ sapo.corppt.com ]] ; then
+    if [[ ( $HOSTNAME =~ sapo.corppt.com ) || ( $HOSTNAME =~ chopchop ) ]] ; then
         export GIT_AUTHOR_NAME="Tiago Henriques"
         export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
         export GIT_AUTHOR_EMAIL="tiago-g-henriques@telecom.pt"
