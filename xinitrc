@@ -14,4 +14,5 @@ fi
 # exec gnome-session
 # exec startkde
 # exec startxfce4
-exec scrotwm
+# exec scrotwm
+exec dwm
