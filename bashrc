@@ -228,6 +228,8 @@ ${COLOR_OFF}\
     fi
 
     # Turn on the Bash vi mode. Mouahahaha!
+    hash vi &> /dev/null
+    [ $? -eq 0 ] && alias vi=vim
     set -o vi
 fi # end of 'if [[ -n "$PS1" ]] ; then'
 
