@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO=~/github/dotfiles
+REPO=~/dotfiles
 
 pushd $REPO > /dev/null
 if [ -z "$1" ] ; then
