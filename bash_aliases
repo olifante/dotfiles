@@ -2,10 +2,10 @@
 
 case $OSTYPE in
     linux*)
-        alias l='/bin/ls --color'
+        alias l='ls --color'
         ;;
     darwin*)
-        alias l='/bin/ls -G'
+        alias l='ls -G'
         ;;
     freebsd*)
         alias l='ls -G'
