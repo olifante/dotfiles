@@ -47,12 +47,22 @@
 	autosetuprebase = always
 [branch "master"]
 	rebase = true
+
 [diff]
-	tool = diffmerge
-[difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+    tool = araxis
+#[difftool "araxis"]
+#    cmd = /Users/trinosauro/bin/Utilities/araxisgitdiff
+#[difftool "diffmerge"]
+#    cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+
 [merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-	trustExitCode = true
+    tool = araxis
+[mergetool]
+    keepBackup = false
+#[mergetool "araxis"]
+#    cmd = /Users/trinosauro/bin/Utilities/araxisgitmerge "$PWD/$REMOTE" "$PWD/$BASE" "$PWD/$LOCAL" "$PWD/$MERGED"
+#    trustExitCode = false
+#[mergetool "diffmerge"]
+#    cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+#    trustExitCode = true
+
