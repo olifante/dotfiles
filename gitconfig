@@ -49,16 +49,18 @@
 	rebase = true
 
 [diff]
-    tool = araxis
+    tool = ecmerge
 #[difftool "araxis"]
 #    cmd = /Users/trinosauro/bin/Utilities/araxisgitdiff
 #[difftool "diffmerge"]
 #    cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 
 [merge]
-    tool = araxis
+    tool = ecmerge
 [mergetool]
     keepBackup = false
+[mergetool "ecmerge"]
+    path = /Applications/ECMerge.app/Contents/MacOS/guimerge
 #[mergetool "araxis"]
 #    cmd = /Users/trinosauro/bin/Utilities/araxisgitmerge "$PWD/$REMOTE" "$PWD/$BASE" "$PWD/$LOCAL" "$PWD/$MERGED"
 #    trustExitCode = false

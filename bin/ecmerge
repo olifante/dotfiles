@@ -1,0 +1,2 @@
+#!/bin/sh
+/Applications/ECMerge.app/Contents/MacOS/guimerge "$@"
