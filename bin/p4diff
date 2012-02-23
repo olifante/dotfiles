@@ -1,2 +1,8 @@
 #!/bin/sh
-[ $# -eq 2 ] && /Applications/p4merge.app/Contents/MacOS/p4merge "$PWD/$1" "$PWD/$2"
+realpath() {
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+
+A=`realpath $1`
+B=`realpath $2`
+[ $# -eq 2 ] && /Applications/p4merge.app/Contents/MacOS/p4merge "$A" "$B"
