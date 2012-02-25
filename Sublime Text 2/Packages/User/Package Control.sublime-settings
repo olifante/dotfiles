@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1330207546,
+	"auto_upgrade_last_run": 1330211318,
 	"installed_packages":
 	[
 		"Alignment",
@@ -7,6 +7,8 @@
 		"Package Control",
 		"Perforce",
 		"SublimeBlockCursor",
+		"SublimeCodeIntel",
+		"SublimeLinter",
 		"SublimeTextGitX",
 		"Sublimipsum",
 		"Tag",
