@@ -1,0 +1,14 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Mac Classic.tmTheme",
+	"font_face": "Monaco",
+	"font_options":
+	[
+		"no_bold",
+		"no_italic"
+	],
+	"font_size": 10,
+	"ignored_packages":
+	[
+	],
+	"zzzz": "keep this at the bottom to avoid juggling trailing commas"
+}
