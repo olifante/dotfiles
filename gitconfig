@@ -52,16 +52,16 @@
 [diff]
     tool = p4diff
 [difftool "echo"]
-    cmd = echo.sh "$LOCAL" "$PWD/$REMOTE"
+    cmd = "echo.sh \"$LOCAL\" \"$REMOTE\""
 [difftool "filemerge"]
-    cmd = opendiff "$LOCAL" "$REMOTE"
+    cmd = "opendiff \"$LOCAL\" \"$REMOTE\""
 [difftool "diffmerge"]
     cmd = "diffmerge.sh \"$LOCAL\" \"$REMOTE\""
 [difftool "araxis"]
     cmd = $HOME/bin/Utilities/araxisgitdiff
 [difftool "p4diff"]
-    #cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$LOCAL" "$PWD/$REMOTE"
-    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$PWD/$REMOTE"
+    #cmd = "/Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$PWD/$REMOTE\""
+    cmd = "/Applications/p4merge.app/Contents/Resources/launchp4merge \"$LOCAL\" \"$PWD/$REMOTE\""
 
 [merge]
     tool = custom_p4merge
@@ -71,12 +71,12 @@
     cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
     trustExitCode = true
 [mergetool "araxis"]
-    cmd = $HOME/bin/Utilities/araxisgitmerge "$PWD/$REMOTE" "$PWD/$BASE" "$PWD/$LOCAL" "$PWD/$MERGED"
+    cmd = "$HOME/bin/Utilities/araxisgitmerge \"$PWD/$REMOTE\" \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$MERGED\""
     trustExitCode = false
 [mergetool "ecmerge"]
     path = /Applications/ECMerge.app/Contents/MacOS/guimerge
 [mergetool "custom_p4merge"]
-    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$PWD/$BASE" "$PWD/$LOCAL" "$PWD/$REMOTE" "$PWD/$MERGED"
+    cmd = "/Applications/p4merge.app/Contents/Resources/launchp4merge \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$REMOTE\" \"$PWD/$MERGED\""
     keepTemporaries = false
     trustExitCode = false
 
