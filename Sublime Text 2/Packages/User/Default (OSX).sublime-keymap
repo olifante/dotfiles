@@ -1,2 +1,12 @@
 [
+  	{
+        "keys": ["alt+super+s"],
+        "command": "run_external",
+        "args": {"command": "sort"}
+  	},
+  	{
+        "keys": ["alt+super+r"],
+        "command": "prompt_run_external"
+  	}
+
 ]
