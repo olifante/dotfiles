@@ -56,7 +56,7 @@
 [difftool "filemerge"]
     cmd = opendiff "$LOCAL" "$REMOTE"
 [difftool "diffmerge"]
-    cmd = diffmerge "$LOCAL" "$REMOTE"
+    cmd = "diffmerge.sh \"$LOCAL\" \"$REMOTE\""
 [difftool "araxis"]
     cmd = $HOME/bin/Utilities/araxisgitdiff
 [difftool "p4diff"]
