@@ -1,0 +1,15 @@
+{
+	"auto_upgrade_last_run": 1330207546,
+	"installed_packages":
+	[
+		"Alignment",
+		"Git",
+		"Package Control",
+		"Perforce",
+		"SublimeBlockCursor",
+		"SublimeTextGitX",
+		"Sublimipsum",
+		"Tag",
+		"TrailingSpaces"
+	]
+}
