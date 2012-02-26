@@ -1,16 +1,16 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+## see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+## for examples
 
-# If not running interactively, don't do anything
+## If not running interactively, don't do anything
 if [[ -n "$PS1" ]] ; then
-    # append to the history file, don't overwrite it
+    ## append to the history file, don't overwrite it
     shopt -s histappend
 
-    # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+    ## for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 
-    # check the window size after each command and, if necessary,
-    # update the values of LINES and COLUMNS.
+    ## check the window size after each command and, if necessary,
+    ## update the values of LINES and COLUMNS.
     shopt -s checkwinsize
 
     shopt -s cdspell
@@ -31,7 +31,7 @@ if [[ -n "$PS1" ]] ; then
         SSHDIR="${HOME}/.ssh"
         SSH_AUTH_SOCK="${SSHDIR}/.ssh-agent-socket"
         export SSHDIR SSH_AUTH_SOCK
-        
+
         if [ ! -S $SSH_AUTH_SOCK ]; then
             ssh-agent -a $SSH_AUTH_SOCK
             ssh-add
@@ -42,25 +42,27 @@ if [[ -n "$PS1" ]] ; then
         ssh -t ${1} /usr/local/bin/screen -xRR
     }
 
-    # ignore ls, bg, fg, exit commands
+    ## ignore ls, bg, fg, exit commands
     export HISTIGNORE="ls:[bf]g:exit"
 
-    # don't put duplicate lines in the history. See bash(1) for more options
-    # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+    ## don't put duplicate lines in the history. See bash(1) for more options
+    ## don't overwrite GNU Midnight Commander's setting of `ignorespace'.
     HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
-    # ... or force ignoredups and ignorespace
+    ## ... or force ignoredups and ignorespace
     HISTCONTROL=ignoreboth
 
-    # make less more friendly for non-text input files, see lesspipe(1)
-    [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+    ## make less more friendly for non-text input files, see lesspipe(1)
+    if [ -x /usr/bin/lesspipe ]; then
+        eval "$(SHELL=/bin/sh lesspipe)"
+    fi
 
     GIT_COMPLETION="$HOME/bin/git-completion.bash"
     if [[ -s "$GIT_COMPLETION" ]]; then
         source "$GIT_COMPLETION"
     fi
 
-    # If you often cd into large repos, the following flags might slow you down.
-    # Uncomment these lines if you don't usually work with huge git repos
+    ## If you often cd into large repos, the following flags might slow you down.
+    ## Uncomment these lines if you don't usually work with huge git repos
     # GIT_PS1_SHOWDIRTYSTATE=true # Add Git dirty state mark to PS1
     # GIT_PS1_SHOWSTASHSTATE=true # Show if something is stashed
     # GIT_PS1_SHOWUNTRACKEDFILES=true # Show if there're untracked files
@@ -79,16 +81,16 @@ if [[ -n "$PS1" ]] ; then
     # hash returns 1 if command not found
     hash git &> /dev/null
     if [ $? -eq 0 ]; then
-        # git found
+        ## git found
         hash __git_ps1 &> /dev/null
         if [ $? -eq 0 ]; then
             export PROMPT_COMMAND='GIT=$(__git_ps1 " (%s)")'
         fi
         export GIT_BRANCH='$(echo $GIT)'
-        # Are dotfiles clean?
+        ## Are dotfiles clean?
         $HOME/bin/dotfiles
     else
-        # git not found
+        ## git not found
         export PROMPT_COMMAND=""
         export GIT_BRANCH=""
     fi
@@ -104,7 +106,7 @@ if [[ -n "$PS1" ]] ; then
           ;;
         esac
 
-        # set it to 'yes' if you want colored prompt
+        ## set it to 'yes' if you want colored prompt
         color_prompt=yes
 
         if [ "$color_prompt" = yes ]; then
@@ -162,74 +164,93 @@ ${COLOR_OFF}\
     }
     set_prompt
 
-    # enable color support of ls and also add handy aliases
+    ## enable color support of ls and also add handy aliases
     if [ -x /usr/bin/dircolors ]; then
-        test -r "$HOME/.dircolors" && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
+        if [ -r "$HOME/.dircolors" ]; then
+            eval "$(dircolors -b $HOME/.dircolors)" 
+        else
+            eval "$(dircolors -b)"
+        fi
         alias ls='ls --color=auto'
         alias grep='grep --color=auto'
         alias fgrep='fgrep --color=auto'
         alias egrep='egrep --color=auto'
     fi
 
-    # Alias definitions.
-    # You may want to put all your additions into a separate file like
-    # ~/.bash_aliases, instead of adding them here directly.
-    # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+    ## Alias definitions.
+    ## You may want to put all your additions into a separate file like
+    ## ~/.bash_aliases, instead of adding them here directly.
+    ## See /usr/share/doc/bash-doc/examples in the bash-doc package.
     BASH_ALIASES="$HOME/.bash_aliases"
     if [ -f "$BASH_ALIASES" ]; then
         source "$BASH_ALIASES"
     fi
 
-    # This is a good place to source rvm v v v (loads RVM into a shell session).
+    ## This is a good place to source rvm v v v (loads RVM into a shell session).
     RVM="$HOME/.rvm/scripts/rvm"
-    [[ -s "$RVM" ]] && source "$RVM"
+    if [[ -s "$RVM" ]]; then
+        source "$RVM"
+    fi
 
-    # Set the EDITOR variable
-    export EDITOR='vim'
-
-    # Set TERM for 256color support (install ncurses-term is a plus)
+    ## Set TERM for 256color support (install ncurses-term is a plus)
     export TERM='gnome-256color'
 
-    # Define virtualenv variables
+    ## Define virtualenv variables
     export WORKON_HOME=$HOME/.virtualenvs
     VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
-    [[ -s "$VIRTUALENVWRAPPER" ]] && source "$VIRTUALENVWRAPPER"
+    if [[ -s "$VIRTUALENVWRAPPER" ]]; then
+        source "$VIRTUALENVWRAPPER"
+    fi
 
-    # Add classpath for Clojure
+    ## Add classpath for Clojure
     export CLASSPATH=$CLASSPATH:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
 
     export PYTHONSTARTUP=$HOME/.pythonrc.py
 
-    # Define variables for Cappuccino development
+    ## Define variables for Cappuccino development
     export NARWHAL_ENGINE=jsc
     export CAPP_BUILD="$HOME/git/cappuccino/Build"
 
-    # Load git token
+    ## Load git token
     GITHUBCONFIG="$HOME/.githubconfig.sh"
     if [ -x "$GITHUBCONFIG" ]; then
         source "$GITHUBCONFIG"
     fi
 
-    # If brew found
+    ## If brew found
     hash brew &> /dev/null
     if [ $? -eq 0 ]; then
-        # Load z, a smart cd that learns your favorite directories
+        ## Load z, a smart cd that learns your favorite directories
         Z_SCRIPT=`brew --prefix`/etc/profile.d/z.sh
         if [ -x "$Z_SCRIPT" ]; then
-            # install with "brew install z"
+            ## install with "brew install z"
             source "$Z_SCRIPT"
         fi
-        # Load programmable bash completion
+        ## Load programmable bash completion
         BASH_COMPLETION=`brew --prefix`/etc/bash_completion
         if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
-            # install with "brew install bash_completion"
+            ## install with "brew install bash_completion"
             source "$BASH_COMPLETION"
         fi
     fi
 
-    # Turn on the Bash vi mode. Mouahahaha!
-    hash vi &> /dev/null
-    [ $? -eq 0 ] && alias vi=vim
+    ## Use vim instead of vi if available
+    hash vim &> /dev/null
+    if [ $? -eq 0 ]; then
+        alias vi=vim
+    fi
+
+    ## Use vi keybindings for command-line editing
     set -o vi
+
+    ## Set the EDITOR variable
+    SUBLIME_SHORTCUT="$HOME/dotfiles/bin/subl"
+    if [ -x "$SUBLIME_SHORTCUT" ]; then
+        export EDITOR=subl
+        alias vi=subl
+    else
+        export EDITOR=vi
+    fi
+
 fi # end of 'if [[ -n "$PS1" ]] ; then'
 

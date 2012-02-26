@@ -1,2 +1,3 @@
 bin/mate
 *.pyc
+.DS_Store
