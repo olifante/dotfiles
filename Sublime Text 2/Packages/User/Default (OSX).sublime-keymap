@@ -1,4 +1,5 @@
 [
+    { "keys": ["super+t"], "command": "new_file" },
   	{
         "keys": ["alt+super+s"],
         "command": "run_external",
