@@ -248,6 +248,7 @@ ${COLOR_OFF}\
     if [ -x "$SUBLIME_SHORTCUT" ]; then
         export EDITOR=subl
         alias vi=subl
+        alias mate=subl
     else
         export EDITOR=vi
     fi
