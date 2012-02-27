@@ -3,7 +3,7 @@ bindkey -v
 stty sane
 #stty erase 
 
-if [[ $OSTYPE == darwin* ]]; then 
+if [[ $OSTYPE == darwin* ]]; then
    TERM=xterm-color
    export SSH_AUTH_SOCK=/tmp/tiago-sshagent/SSHAuthSock
    if [ ! -d /tmp/tiago-sshagent ]
@@ -24,7 +24,7 @@ export TERM
 
 if [[ $OSTYPE == solaris* ]]; then
    path=(
-      /usr/sbin /usr/bin /usr/ccs/bin /usr/openwin/bin /usr/dt/bin 
+      /usr/sbin /usr/bin /usr/ccs/bin /usr/openwin/bin /usr/dt/bin
       /usr/platform/SUNW,Ultra-60/sbin /usr/cluster/bin /usr/cluster/lib/sc
       /opt/SUNWexplo/bin /usr/local/bin /usr/local/samba/bin
    )
@@ -71,7 +71,7 @@ if [[ $OSTYPE != solaris* ]]; then
 fi
 
 PS1="%S%! %D{%Y-%m-%d} %*%s ${GREEN}%n${BLACK}@${BLUE}%m ${CYAN}lvl:%L err:%?
-${BOLD_MAUVE}%~ 
+${BOLD_MAUVE}%~
 ${BOLD_RED}%# ${BLACK}"
 
 export PS1
@@ -875,7 +875,7 @@ setopt posix_builtins
 #Zle
 #    BEEP (+B) <D> (set - NO_BEEP unset)
 #           Beep on error in ZLE.
-#    EMACS (unset - together with VI!) 
+#    EMACS (unset - together with VI!)
 #           If  ZLE  is  loaded,  turning  on this option has the equivalent
 #           effect of `bindkey -e'.  In addition, the VI  option  is  unset.
 #           Turning it off has no effect.  The option setting is not guaran-

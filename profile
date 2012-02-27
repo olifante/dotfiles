@@ -16,6 +16,10 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+if [ -d "$HOME/.rvm/bin" ]; then
+    PATH="$HOME/.rvm/bin":$PATH
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "/Developer/usr/bin" ]; then
     PATH="/Developer/usr/bin:$PATH"
