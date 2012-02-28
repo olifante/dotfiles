@@ -249,6 +249,7 @@ ${COLOR_OFF}\
         export EDITOR=subl
         alias vi=subl
         alias mate=subl
+        alias sd='subl .'
     else
         export EDITOR=vi
     fi
