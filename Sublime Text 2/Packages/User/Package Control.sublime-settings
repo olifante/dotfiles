@@ -1,12 +1,13 @@
 {
-	"auto_upgrade_last_run": 1330211318,
+	"auto_upgrade_last_run": 1330430005,
 	"installed_packages":
 	[
 		"Alignment",
+		"CoffeeScript",
 		"Git",
 		"Package Control",
 		"Perforce",
-		"SublimeBlockCursor",
+		"Pretty JSON",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeTextGitX",
