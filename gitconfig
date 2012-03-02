@@ -82,3 +82,6 @@
     keepTemporaries = false
     trustExitCode = false
 
+[user]
+	name = Tiago Henriques
+	email = trinosauro@gmail.com
