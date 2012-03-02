@@ -1,11 +1,12 @@
 {
-	"auto_upgrade_last_run": 1330441757,
+	"auto_upgrade_last_run": 1330697632,
 	"installed_packages":
 	[
 		"Alignment",
 		"CoffeeScript",
 		"Git",
 		"HTML Export",
+		"Markdown Preview",
 		"Package Control",
 		"Perforce",
 		"Pretty JSON",

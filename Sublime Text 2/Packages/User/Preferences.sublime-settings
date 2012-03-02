@@ -9,6 +9,8 @@
 	"font_size": 10,
 	"ignored_packages":
 	[
+		"TrailingSpaces",
+		"Perforce"
 	],
 	"zzzz": "keep this at the bottom to avoid juggling trailing commas"
 }
