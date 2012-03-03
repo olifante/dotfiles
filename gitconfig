@@ -64,6 +64,11 @@
 [difftool "p4diff"]
     #cmd = "/Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$PWD/$REMOTE\""
     cmd = "/Applications/p4merge.app/Contents/Resources/launchp4merge \"$LOCAL\" \"$PWD/$REMOTE\""
+[diff "localizablestrings"]
+    ## add this line to your .gitattributes or .git/info/attributes file
+    ## to allow git to diff UTF-16 files such as Localizable.strings
+    ## *.strings diff=localizablestrings
+    textconv = "iconv -f utf-16 -t utf-8"
 
 [merge]
     tool = custom_p4merge
