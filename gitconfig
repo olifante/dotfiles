@@ -35,6 +35,7 @@
     lm = log --pretty=medium --abbrev-commit -20
     d = diff
     dt = difftool
+    mt = mergetool
     last = cat-file commit HEAD
     t = tag
     tl = tag -l
