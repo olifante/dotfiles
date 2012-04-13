@@ -6,14 +6,16 @@
     # ui = true
 [core]
     editor = vim
-	quotepath = false
-	pager = less -FRSX
+    quotepath = false
+    pager = less -FRSX
 [github]
-    user = olifante
+    #user = olifante
+    #user = tiago-g-henriques
 [alias]
     st = status
     ci = commit
     cm = commit -m
+    cam = commit -am
     #br = branch
     co = checkout
     df = diff
@@ -46,11 +48,11 @@
         "!f() { git ls-files --unmerged | cut -f2 | sort -u }; mate `f`"
             # "!f() { git status --porcelain | grep '^UU' | cut -d' ' -f2 }; mate `f`"
 [push]
-	default = tracking
+    default = tracking
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 [branch "master"]
-	rebase = true
+    rebase = true
 
 [diff]
     tool = p4diff
@@ -89,5 +91,5 @@
     trustExitCode = false
 
 [user]
-	name = Tiago Henriques
-	email = trinosauro@gmail.com
+    name = Tiago Henriques
+    email = trinosauro@gmail.com
