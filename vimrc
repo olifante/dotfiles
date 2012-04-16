@@ -104,4 +104,7 @@ set completeopt=menu       " Don't show extra info on completions
 set wildignore+=*.o,*.obj,*.ko,*.so,*.mod.c,*.pyc,*.DS_Store,*.db " Hide irrelevent matches
 set ignorecase smartcase   " Only be case sensitive when search has uppercase
 "set nofoldenable           " Disable folding
+"set foldmethod=manual
+"set foldmethod=indent
+set foldmethod=marker " Use {{{ and }}} to define folding blocks
 "ru macros/matchit.vim      " Enable extended % matching

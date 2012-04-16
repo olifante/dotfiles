@@ -1,12 +1,12 @@
-## BEGIN https://github.com/github/gitignore/blob/master/Django.gitignore
+# {{{ https://github.com/github/gitignore/blob/master/Django.gitignore
 
 *.log
 *.pot
 *.pyc
 local_settings.py
-## END   https://github.com/github/gitignore/blob/master/Django.gitignore
+# }}} https://github.com/github/gitignore/blob/master/Django.gitignore
 
-## BEGIN https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+# {{{ https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
 
 .DS_Store
 
@@ -16,30 +16,30 @@ local_settings.py
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-## END   https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+# }}} https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
 
-## BEGIN https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
+# {{{ https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
 
 
 # SublimeText project files
 /*.sublime-project
-## END   https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
+# }}} https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
 
-## BEGIN https://github.com/github/gitignore/blob/master/Global/TextMate.gitignore
+# {{{ https://github.com/github/gitignore/blob/master/Global/TextMate.gitignore
 
 *.tmproj
 *.tmproject
 tmtags
-## END   https://github.com/github/gitignore/blob/master/Global/TextMate.gitignore
+# }}} https://github.com/github/gitignore/blob/master/Global/TextMate.gitignore
 
-## BEGIN https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+# {{{ https://github.com/github/gitignore/blob/master/Global/vim.gitignore
 
 .*.sw[a-z]
 *.un~
 Session.vim
-## END   https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+# }}} https://github.com/github/gitignore/blob/master/Global/vim.gitignore
 
-## BEGIN https://github.com/github/gitignore/blob/master/Objective-C.gitignore
+# {{{ https://github.com/github/gitignore/blob/master/Objective-C.gitignore
 
 # Xcode
 build/*
@@ -56,9 +56,9 @@ build/*
 xcuserdata
 profile
 *.moved-aside
-## END   https://github.com/github/gitignore/blob/master/Objective-C.gitignore
+# }}} https://github.com/github/gitignore/blob/master/Objective-C.gitignore
 
-## BEGIN https://github.com/github/gitignore/blob/master/Python.gitignore
+# {{{ https://github.com/github/gitignore/blob/master/Python.gitignore
 
 *.py[co]
 
@@ -88,5 +88,5 @@ nosetests.xml
 
 #Mr Developer
 .mr.developer.cfg
-## END   https://github.com/github/gitignore/blob/master/Python.gitignore
+# }}} https://github.com/github/gitignore/blob/master/Python.gitignore
 
