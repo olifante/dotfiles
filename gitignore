@@ -1,5 +1,46 @@
-# Mac
+## BEGIN https://github.com/github/gitignore/blob/master/Django.gitignore
+
+*.log
+*.pot
+*.pyc
+local_settings.py
+## END   https://github.com/github/gitignore/blob/master/Django.gitignore
+
+## BEGIN https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+
 .DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+## END   https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+
+## BEGIN https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
+
+
+# SublimeText project files
+/*.sublime-project
+## END   https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
+
+## BEGIN https://github.com/github/gitignore/blob/master/Global/TextMate.gitignore
+
+*.tmproj
+*.tmproject
+tmtags
+## END   https://github.com/github/gitignore/blob/master/Global/TextMate.gitignore
+
+## BEGIN https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+
+.*.sw[a-z]
+*.un~
+Session.vim
+## END   https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+
+## BEGIN https://github.com/github/gitignore/blob/master/Objective-C.gitignore
+
 # Xcode
 build/*
 *.pbxuser
@@ -12,7 +53,40 @@ build/*
 !default.perspectivev3
 *.xcworkspace
 !default.xcworkspace
-xcuserdata/*
+xcuserdata
 profile
 *.moved-aside
+## END   https://github.com/github/gitignore/blob/master/Objective-C.gitignore
+
+## BEGIN https://github.com/github/gitignore/blob/master/Python.gitignore
+
+*.py[co]
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
+## END   https://github.com/github/gitignore/blob/master/Python.gitignore
 
