@@ -27,7 +27,9 @@
     ls = ls-files
 
     # Show files ignored by git:
-    ign = ls-files -o -i --exclude-standard
+    ignored = ls-files --others --ignored --exclude-standard
+    ignored2 = ls-files --others --ignored --exclude-from=.git/info/exclude
+    ignored3 = clean -ndX
 
     # Tiago
     b = branch
