@@ -60,3 +60,4 @@ alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in 
 alias top='top -o cpu'
 alias systail='tail -f /var/log/system.log'
 alias m='more'
+alias ssh-fingerprint='ssh-keygen -l -f'
