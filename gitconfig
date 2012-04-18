@@ -8,7 +8,7 @@
     editor = vim
     quotepath = false
     pager = less -FRSX
-    excludesfile = /Users/trinosauro/.gitignore
+    excludesfile = ~/.gitignore
 [github]
     #user = olifante
     #user = tiago-g-henriques
