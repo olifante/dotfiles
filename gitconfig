@@ -28,8 +28,10 @@
 
     # Show files ignored by git:
     ignored = ls-files --others --ignored --exclude-standard
-    ignored2 = ls-files --others --ignored --exclude-from=.git/info/exclude
-    ignored3 = clean -ndX
+    ignored1 = ls-files --others --ignored --exclude-from=~/.gitignore
+    ignored2 = ls-files --others --ignored --exclude-from=.gitignore
+    ignored3 = ls-files --others --ignored --exclude-from=.git/info/exclude
+    ignored0 = clean -ndX
 
     # Tiago
     b = branch
