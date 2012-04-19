@@ -13,18 +13,19 @@
     #user = olifante
     #user = tiago-g-henriques
 [alias]
-    st = status
-    ci = commit
+    s = status -sb
+    b = branch
+    ba = branch -a
+    br = branch -r
     cm = commit -m
     cam = commit -am
-    #br = branch
     co = checkout
-    df = diff
     dc = diff --cached
-    lg = log -p
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    d = diff
+    dt = difftool
+    mt = mergetool
     ls = ls-files
+    last = cat-file commit HEAD
 
     # Show files ignored by git:
     ignored = ls-files --others --ignored --exclude-standard
@@ -33,19 +34,29 @@
     ignored3 = ls-files --others --ignored --exclude-from=.git/info/exclude
     ignored0 = clean -ndX
 
-    # Tiago
-    b = branch
-    ba = branch -a
-    br = branch -r
-    s = status -sb
-    l = log --graph --decorate --pretty=oneline --abbrev-commit -20
-    lm = log --pretty=medium --abbrev-commit -20
-    d = diff
-    dt = difftool
-    mt = mergetool
-    last = cat-file commit HEAD
-    t = tag
-    tl = tag -l
+    # safe removal of .git/config sections
+    remove-section = config -f .git/config --remove-section # e.g. git remove-section submodule.CoconutKit
+
+    # log aliases
+    lpatch = log -p
+    lfuller = log --pretty=fuller --abbrev-commit
+    lfull = log --pretty=full --abbrev-commit
+    lmedium = log --pretty=medium --abbrev-commit
+    lshort= log --pretty=short --abbrev-commit
+    loneline = log --pretty=oneline --abbrev-commit
+    lol = log --pretty=oneline --abbrev-commit --graph --decorate
+    lola = log --pretty=oneline --abbrev-commit --graph --decorate --all
+    l = log --pretty=oneline --abbrev-commit --graph --decorate --all -20
+    la = log --pretty=oneline --abbrev-commit -g # searches reflog
+
+    # log search aliases
+    lgrep = log --pretty=oneline --abbrev-commit --grep
+    lstring = log --pretty=oneline --abbrev-commit -S
+    lregex = log --pretty=oneline --abbrev-commit -G
+    lgrepa = log --pretty=oneline --abbrev-commit -g --grep # searches reflog
+    lstringa = log --pretty=oneline --abbrev-commit -g -S # searches reflog
+    lregexa = log --pretty=oneline --abbrev-commit -g -G # searches reflog
+
     add-unmerged = \
         "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
             # "!f() { git status --porcelain | grep '^[ADU][ADU]' | cut -d' ' -f2 }; git add `f`"
