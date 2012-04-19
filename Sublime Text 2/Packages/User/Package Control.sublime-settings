@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1330697632,
+	"auto_upgrade_last_run": 1334793965,
 	"installed_packages":
 	[
 		"Alignment",
@@ -10,6 +10,7 @@
 		"Package Control",
 		"Perforce",
 		"Pretty JSON",
+		"SublimeBlockCursor",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeTextGitX",
