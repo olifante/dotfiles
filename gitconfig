@@ -1,34 +1,34 @@
 [color]
-    status = auto
-    branch = auto
-    diff = auto
+    status      = auto
+    branch      = auto
+    diff        = auto
     interactive = auto
-    # ui = true
+    # ui        = true
 [core]
-    editor = vim
-    quotepath = false
-    pager = less -FRSX
+    editor       = vim
+    quotepath    = false
+    pager        = less -FRSX
     excludesfile = ~/.gitignore
 [github]
     #user = olifante
     #user = tiago-g-henriques
 [alias]
-    s = status -sb
-    b = branch
-    ba = branch -a
-    br = branch -r
-    cm = commit -m
-    cam = commit -am
-    co = checkout
-    dc = diff --cached
-    d = diff
-    dt = difftool
-    mt = mergetool
-    ls = ls-files
+    s    = status -sb
+    b    = branch
+    ba   = branch -a
+    br   = branch -r
+    cm   = commit -m
+    cam  = commit -am
+    co   = checkout
+    dc   = diff --cached
+    d    = diff
+    dt   = difftool
+    mt   = mergetool
+    ls   = ls-files
     last = cat-file commit HEAD
 
     # Show files ignored by git:
-    ignored = ls-files --others --ignored --exclude-standard
+    ignored  = ls-files --others --ignored --exclude-standard
     ignored1 = ls-files --others --ignored --exclude-from=~/.gitignore
     ignored2 = ls-files --others --ignored --exclude-from=.gitignore
     ignored3 = ls-files --others --ignored --exclude-from=.git/info/exclude
@@ -38,24 +38,24 @@
     remove-section = config -f .git/config --remove-section # e.g. git remove-section submodule.CoconutKit
 
     # log aliases
-    lpatch = log -p
-    lfuller = log --pretty=fuller --abbrev-commit
-    lfull = log --pretty=full --abbrev-commit
-    lmedium = log --pretty=medium --abbrev-commit
-    lshort= log --pretty=short --abbrev-commit
+    lpatch   = log -p
+    lfuller  = log --pretty=fuller  --abbrev-commit
+    lfull    = log --pretty=full    --abbrev-commit
+    lmedium  = log --pretty=medium  --abbrev-commit
+    lshort   = log --pretty=short   --abbrev-commit
     loneline = log --pretty=oneline --abbrev-commit
-    lol = log --pretty=oneline --abbrev-commit --graph --decorate
-    lola = log --pretty=oneline --abbrev-commit --graph --decorate --all
-    l = log --pretty=oneline --abbrev-commit --graph --decorate --all -20
-    la = log --pretty=oneline --abbrev-commit -g # searches reflog
+    lol      = log --pretty=oneline --abbrev-commit --graph --decorate
+    lola     = log --pretty=oneline --abbrev-commit --graph --decorate --all
+    l        = log --pretty=oneline --abbrev-commit --graph --decorate --all -20
+    la       = log --pretty=oneline --abbrev-commit -g # searches reflog
 
     # log search aliases
-    lgrep = log --pretty=oneline --abbrev-commit --grep
-    lstring = log --pretty=oneline --abbrev-commit -S
-    lregex = log --pretty=oneline --abbrev-commit -G
-    lgrepa = log --pretty=oneline --abbrev-commit -g --grep # searches reflog
+    lgrep    = log --pretty=oneline --abbrev-commit --grep
+    lstring  = log --pretty=oneline --abbrev-commit -S
+    lregex   = log --pretty=oneline --abbrev-commit -G
+    lgrepa   = log --pretty=oneline --abbrev-commit -g --grep # searches reflog
     lstringa = log --pretty=oneline --abbrev-commit -g -S # searches reflog
-    lregexa = log --pretty=oneline --abbrev-commit -g -G # searches reflog
+    lregexa  = log --pretty=oneline --abbrev-commit -g -G # searches reflog
 
     add-unmerged = \
         "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
@@ -97,14 +97,14 @@
     cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
     trustExitCode = true
 [mergetool "araxis"]
-    cmd = "$HOME/bin/Utilities/araxisgitmerge \"$PWD/$REMOTE\" \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$MERGED\""
+    cmd           = "$HOME/bin/Utilities/araxisgitmerge \"$PWD/$REMOTE\" \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$MERGED\""
     trustExitCode = false
 [mergetool "ecmerge"]
     path = /Applications/ECMerge.app/Contents/MacOS/guimerge
 [mergetool "custom_p4merge"]
-    cmd = "/Applications/p4merge.app/Contents/Resources/launchp4merge \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$REMOTE\" \"$PWD/$MERGED\""
+    cmd             = "/Applications/p4merge.app/Contents/Resources/launchp4merge \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$REMOTE\" \"$PWD/$MERGED\""
     keepTemporaries = false
-    trustExitCode = false
+    trustExitCode   = false
 
 [user]
     name = Tiago Henriques
