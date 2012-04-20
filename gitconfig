@@ -43,19 +43,20 @@
     lfull    = log --pretty=full    --abbrev-commit
     lmedium  = log --pretty=medium  --abbrev-commit
     lshort   = log --pretty=short   --abbrev-commit
-    loneline = log --pretty=oneline --abbrev-commit
+    l1       = log --pretty=oneline --abbrev-commit
+    l        = log --pretty=oneline --abbrev-commit --graph --decorate -20
+    la       = log --pretty=oneline --abbrev-commit --graph --decorate -20 --all
     lol      = log --pretty=oneline --abbrev-commit --graph --decorate
     lola     = log --pretty=oneline --abbrev-commit --graph --decorate --all
-    l        = log --pretty=oneline --abbrev-commit --graph --decorate --all -20
-    la       = log --pretty=oneline --abbrev-commit -g # searches reflog
+    lg       = log --pretty=oneline --abbrev-commit -g # searches reflog
 
     # log search aliases
-    lgrep    = log --pretty=oneline --abbrev-commit --grep
-    lstring  = log --pretty=oneline --abbrev-commit -S
-    lregex   = log --pretty=oneline --abbrev-commit -G
-    lgrepa   = log --pretty=oneline --abbrev-commit -g --grep # searches reflog
-    lstringa = log --pretty=oneline --abbrev-commit -g -S # searches reflog
-    lregexa  = log --pretty=oneline --abbrev-commit -g -G # searches reflog
+    lgrep      = log --pretty=oneline --abbrev-commit --grep
+    lstring    = log --pretty=oneline --abbrev-commit -S
+    lregex     = log --pretty=oneline --abbrev-commit -G
+    lggrep     = log --pretty=oneline --abbrev-commit -g --grep # searches reflog
+    lgstring   = log --pretty=oneline --abbrev-commit -g -S # searches reflog
+    lgregex    = log --pretty=oneline --abbrev-commit -g -G # searches reflog
 
     add-unmerged = \
         "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
