@@ -6,6 +6,8 @@ case $OSTYPE in
         ;;
     darwin*)
         alias l='ls -G'
+        alias plxml=' plutil -convert xml1 -o -'
+        alias pljson=' plutil -convert json -o -'
         ;;
     freebsd*)
         alias l='ls -G'
