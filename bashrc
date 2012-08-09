@@ -236,6 +236,7 @@ ${COLOR_OFF}\
     SUBLIME_SHORTCUT="$HOME/dotfiles/bin/subl"
     if [ -x "$SUBLIME_SHORTCUT" ]; then
         export EDITOR=subl
+        alias sb=subl
         alias vi=subl
         alias mate=subl
         alias sd='subl .'
