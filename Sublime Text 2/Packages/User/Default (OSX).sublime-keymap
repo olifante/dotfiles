@@ -1,7 +1,8 @@
 [
     {
         "keys": [
-            "super+t"
+            "super+t",
+            "super+n"
         ],
         "command": "new_file"
     },
@@ -28,5 +29,25 @@
             "alt+super+r"
         ],
         "command": "prompt_run_external"
+    },
+    {
+        "keys": [
+            "alt+super+p"
+        ],
+        "command": "show_overlay",
+        "args": {
+            "overlay": "command_palette",
+            "text": "Package Control: "
+        }
+    },
+    {
+        "keys": [
+            "alt+super+backquote"
+        ],
+        "command": "show_panel",
+        "args": {
+            "panel": "console",
+            "toggle": true
+        }
     }
 ]
