@@ -1,21 +1,29 @@
 {
-	"auto_upgrade_last_run": 1334793965,
+	"auto_upgrade_last_run": 1345747755,
 	"installed_packages":
 	[
 		"Alignment",
+		"BracketHighlighter",
 		"CoffeeScript",
-		"Git",
+		"Color Highlighter",
+		"CSS Less(ish)",
+		"DetectSyntax",
+		"Djaneiro",
+		"EncodingHelper",
+		"Format SQL",
 		"HTML Export",
+		"HTML5",
+		"JsFormat",
+		"LESS",
 		"Markdown Preview",
 		"Package Control",
-		"Perforce",
+		"Placeholders",
 		"Pretty JSON",
-		"SublimeBlockCursor",
+		"SCSS",
+		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
-		"SublimeTextGitX",
-		"Sublimipsum",
-		"Tag",
-		"TrailingSpaces"
+		"TrailingSpaces",
+		"ZenCoding"
 	]
 }
