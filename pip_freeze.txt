@@ -3,6 +3,8 @@ Twisted==12.0.0
 altgraph==0.9
 bdist-mpkg==0.4.4
 bonjour-py==0.3
+distribute==0.6.28
+ipython==0.13
 macholib==1.4.2
 modulegraph==0.9.1
 numpy==1.6.1
@@ -45,6 +47,12 @@ pyobjc-framework-SystemConfiguration==2.3.2a0
 pyobjc-framework-WebKit==2.3.2a0
 pyobjc-framework-XgridFoundation==2.3.2a0
 python-dateutil==1.5
+readline==6.2.2
+stevedore==0.3
+virtualenv==1.7.2
+virtualenv-clone==0.2.4
+virtualenvwrapper==3.6
 wsgiref==0.1.2
 xattr==0.6.2
+yolk==0.4.3
 zope.interface==3.5.1
