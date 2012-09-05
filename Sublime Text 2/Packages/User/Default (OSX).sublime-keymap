@@ -42,6 +42,12 @@
     },
     {
         "keys": [
+            "alt+super+a"
+        ],
+        "command": "alignment"
+    },
+    {
+        "keys": [
             "alt+super+backquote"
         ],
         "command": "show_panel",
