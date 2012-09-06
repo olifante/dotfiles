@@ -1,7 +1,6 @@
 [
     {
         "keys": [
-            "super+t",
             "super+n"
         ],
         "command": "new_file"
