@@ -1,3 +1,6 @@
+bin/Utilities
+bin/repo_maintenance.sh
+bin/launchp4merge
 bin/mate
 *.pyc
 .DS_Store
