@@ -4,3 +4,4 @@ bin/launchp4merge
 bin/mate
 *.pyc
 .DS_Store
+Sublime Text 2/Packages/User/Xcode default.tmTheme.cache
