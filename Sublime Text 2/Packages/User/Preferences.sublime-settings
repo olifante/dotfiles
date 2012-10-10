@@ -12,6 +12,7 @@
     "font_size": 11.0,
     "highlight_line": true,
     "open_files_in_new_window": false,
+    "perltidy_cmd": "/Users/trinosauro/perl5/bin/perltidy",
     "remember_open_files": false,
     "save_on_focus_lost": true,
     "translate_tabs_to_spaces": true,

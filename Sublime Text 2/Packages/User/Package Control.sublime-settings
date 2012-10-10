@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1345747755,
+	"auto_upgrade_last_run": 1349865051,
 	"installed_packages":
 	[
 		"Alignment",
@@ -17,6 +17,7 @@
 		"LESS",
 		"Markdown Preview",
 		"Package Control",
+		"PerlTidy",
 		"Placeholders",
 		"Pretty JSON",
 		"SCSS",
