@@ -5,17 +5,18 @@
     "ensure_newline_at_eof_on_save": true,
     "find_selected_text": true,
     "font_face": "Menlo",
-    "font_options":
-    [
-    ],
+    "font_options": [],
     "font_size": 11.0,
     "highlight_line": true,
+    "ignored_packages": [
+        "BracketHighlighter"
+    ],
     "open_files_in_new_window": false,
     "perltidy_cmd": "/Users/trinosauro/perl5/bin/perltidy",
     "remember_open_files": false,
     "save_on_focus_lost": true,
-    "translate_tabs_to_spaces": true,
     "theme": "Soda Light.sublime-theme",
+    "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true,
     "zzzz": "keep this at the bottom to avoid juggling trailing commas"
 }
