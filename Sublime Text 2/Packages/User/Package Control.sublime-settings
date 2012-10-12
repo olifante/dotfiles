@@ -1,8 +1,9 @@
 {
-	"auto_upgrade_last_run": 1349865051,
+	"auto_upgrade_last_run": 1350059250,
 	"installed_packages":
 	[
 		"Alignment",
+		"ApacheConf.tmLanguage",
 		"BracketHighlighter",
 		"CoffeeScript",
 		"Color Highlighter",
@@ -13,6 +14,7 @@
 		"Format SQL",
 		"HTML Export",
 		"HTML5",
+		"Jade",
 		"JsFormat",
 		"LESS",
 		"Markdown Preview",
@@ -22,6 +24,7 @@
 		"Pretty JSON",
 		"SCSS",
 		"SideBarEnhancements",
+		"Stylus",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"Theme - Soda",
