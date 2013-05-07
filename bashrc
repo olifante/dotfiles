@@ -191,6 +191,11 @@ ${COLOR_OFF}\
         source "$VIRTUALENVWRAPPER"
     fi
 
+    ## Point to Java files
+    export JAVA_HOME=`/usr/libexec/java_home`
+    # export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+    # export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
+
     ## Add classpath for Clojure
     export CLASSPATH=$CLASSPATH:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
 
