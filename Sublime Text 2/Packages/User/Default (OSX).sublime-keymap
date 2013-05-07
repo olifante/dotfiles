@@ -1,6 +1,12 @@
 [
     {
         "keys": [
+            "super+shift+v"
+        ],
+        "command": "paste_and_indent"
+    },
+    {
+        "keys": [
             "super+n"
         ],
         "command": "new_file"
