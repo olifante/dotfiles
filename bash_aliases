@@ -13,12 +13,12 @@ case $OSTYPE in
         alias l='ls -G'
         ;;
     solaris*)
-    	if [[ -x /usr/local/bin/ls ]]; then
-    	    echo using /usr/local/bin/ls --color
-    	    alias lc='/usr/local/bin/ls --color'
-    	else alias l=ls
-    	fi
-    	;;
+        if [[ -x /usr/local/bin/ls ]]; then
+            echo using /usr/local/bin/ls --color
+            alias lc='/usr/local/bin/ls --color'
+        else alias l=ls
+        fi
+        ;;
     cygwin*)
         alias l='ls --color'
         ;;

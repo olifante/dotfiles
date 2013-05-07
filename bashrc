@@ -156,7 +156,7 @@ ${COLOR_OFF}\
     ## enable color support of ls and also add handy aliases
     if [ -x /usr/bin/dircolors ]; then
         if [ -r "$HOME/.dircolors" ]; then
-            eval "$(dircolors -b $HOME/.dircolors)" 
+            eval "$(dircolors -b $HOME/.dircolors)"
         else
             eval "$(dircolors -b)"
         fi
