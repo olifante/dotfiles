@@ -52,6 +52,12 @@
         "command": "alignment"
     },
     {
+        "command": "reveal_in_side_bar",
+        "keys": [
+            "alt+super+b"
+        ]
+    },
+    {
         "keys": [
             "alt+super+backquote"
         ],
