@@ -9,7 +9,8 @@
     "font_size": 11.0,
     "highlight_line": true,
     "ignored_packages": [
-        "BracketHighlighter"
+        "BracketHighlighter",
+        "Vintage"
     ],
     "open_files_in_new_window": false,
     "perltidy_cmd": "/Users/trinosauro/perl5/bin/perltidy",
