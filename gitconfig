@@ -9,6 +9,9 @@
     quotepath    = false
     pager        = less -FRSX
     excludesfile = ~/.gitignore
+    ## see http://lostechies.com/keithdahlby/2011/04/06/windows-git-tip-hide-carriage-return-in-diff/
+    autocrlf = false
+    whitespace = cr-at-eol
 [github]
     #user = olifante
     #user = tiago-g-henriques
