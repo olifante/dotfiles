@@ -16,19 +16,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [ -d "$HOME/.rvm/bin" ]; then
-    PATH="$HOME/.rvm/bin":$PATH
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "/Developer/usr/bin" ]; then
-    PATH="/Developer/usr/bin:$PATH"
-fi
-
-if [ -d "$HOME/bin/Utilities" ]; then
-    PATH="$HOME/bin/Utilities:$PATH"
-fi
-
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
