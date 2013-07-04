@@ -15,6 +15,7 @@
 [github]
     #user = olifante
     #user = tiago-g-henriques
+    user = thethethe
 [alias]
     s    = status -sb
     b    = branch
@@ -112,4 +113,5 @@
 
 [user]
     name = Tiago Henriques
-    email = trinosauro@gmail.com
+    #email = trinosauro@gmail.com
+    email = the@sinnerschrader-mobile.com
