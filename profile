@@ -39,3 +39,7 @@ fi
 if [ -d "/usr/local/share/npm/bin" ]; then
     PATH="/usr/local/share/npm/bin":$PATH
 fi
+
+if [ -d "/usr/share/maven/bin" ]; then
+    PATH="/usr/share/maven/bin":$PATH
+fi
