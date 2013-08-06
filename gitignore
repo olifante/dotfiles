@@ -90,3 +90,5 @@ nosetests.xml
 .mr.developer.cfg
 # }}} https://github.com/github/gitignore/blob/master/Python.gitignore
 
+nbproject/
+.idea/
