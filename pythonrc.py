@@ -4,5 +4,8 @@ except ImportError:
     print "Unable to load readline module."
 else:
     import rlcompleter
-    readline.parse_and_bind("tab: complete")
+    if 'libedit' in readline.__doc__:
+        readline.parse_and_bind("bind ^I rl_complete")
+    else:
+        readline.parse_and_bind("tab: complete")
 
