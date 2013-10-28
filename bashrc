@@ -39,7 +39,7 @@ if [[ -n "$PS1" ]] ; then
     fi
 
     sscreen () {
-        ssh -t ${1} /usr/local/bin/screen -xRR
+        ssh -t ${1} /usr/bin/screen -xRR
     }
 
     ## ignore ls, bg, fg, exit commands
