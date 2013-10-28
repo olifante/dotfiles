@@ -254,3 +254,21 @@ export ANDROID_HOME
 export WORKON_HOME=$HOME/.virtualenvs 
 source /usr/local/bin/virtualenvwrapper.sh 
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
+
+use_env() {
+  typeset venv
+  venv="$1"
+  if [[ `basename "${VIRTUAL_ENV:t}"` != "$venv" ]]; then
+    if workon | grep $venv > /dev/null; then
+      workon "$venv"
+    else
+      echo -n "Create virtualenv $venv now? (Yn) "
+      read answer
+      if [[ "$answer" == "Y" ]]; then
+        mkvirtualenv "$venv"
+      fi
+    fi
+  fi
+}
+
+source /usr/local/Cellar/autoenv/0.1.0/activate.sh
