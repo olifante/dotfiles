@@ -248,3 +248,6 @@ ${COLOR_OFF}\
 
 fi # end of 'if [[ -n "$PS1" ]] ; then'
 
+ANDROID_HOME=/Users/the/frameworks/android-sdk-max_x86
+export ANDROID_HOME
+
