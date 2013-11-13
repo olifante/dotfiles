@@ -67,6 +67,14 @@
             # "!f() { git status --porcelain | grep '^[ADU][ADU]' | cut -d' ' -f2 }; git add `f`"
     edit-unmerged = \
         "!f() { git ls-files --unmerged | cut -f2 | sort -u }; mate `f`"
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
             # "!f() { git status --porcelain | grep '^UU' | cut -d' ' -f2 }; mate `f`"
 [push]
     default = tracking
