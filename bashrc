@@ -42,6 +42,10 @@ if [[ -n "$PS1" ]] ; then
         ssh -t ${1} /usr/bin/screen -xRR
     }
 
+    sshmux () {
+        ssh $* -t 'tmux a || tmux || /bin/bash'
+    }
+
     ## ignore ls, bg, fg, exit commands
     export HISTIGNORE="ls:[bf]g:exit"
 
