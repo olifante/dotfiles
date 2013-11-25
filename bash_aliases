@@ -8,6 +8,7 @@ case $OSTYPE in
         alias l='ls -G'
         alias plxml=' plutil -convert xml1 -o -'
         alias pljson=' plutil -convert json -o -'
+        alias flep='pgrep -fl'
         ;;
     freebsd*)
         alias l='ls -G'
