@@ -1,6 +1,7 @@
 {
     "auto_complete_commit_on_tab": true,
     "color_scheme": "Packages/User/Espresso Soda.tmTheme",
+    "detect_indentation": false,
     "draw_white_space": "all",
     "ensure_newline_at_eof_on_save": true,
     "find_selected_text": true,
@@ -17,7 +18,9 @@
     "remember_open_files": false,
     "save_on_focus_lost": true,
     "theme": "Soda Light.sublime-theme",
+    "tab_size": 4,
     "translate_tabs_to_spaces": true,
+    "trim_automatic_white_space": true,
     "trim_trailing_white_space_on_save": true,
     "zzzz": "keep this at the bottom to avoid juggling trailing commas"
 }
