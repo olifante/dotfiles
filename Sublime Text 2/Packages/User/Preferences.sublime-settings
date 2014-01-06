@@ -1,6 +1,5 @@
 {
-    "auto_complete_commit_on_tab": true,
-    "color_scheme": "Packages/User/Espresso Soda.tmTheme",
+    "color_scheme": "Packages/Color Scheme - Default/Mac Classic.tmTheme",
     "detect_indentation": false,
     "draw_white_space": "all",
     "ensure_newline_at_eof_on_save": true,
@@ -14,10 +13,8 @@
         "Vintage"
     ],
     "open_files_in_new_window": false,
-    "perltidy_cmd": "/Users/trinosauro/perl5/bin/perltidy",
     "remember_open_files": false,
     "save_on_focus_lost": true,
-    "theme": "Soda Light.sublime-theme",
     "tab_size": 4,
     "translate_tabs_to_spaces": true,
     "trim_automatic_white_space": true,
