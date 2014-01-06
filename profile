@@ -28,18 +28,22 @@ if [ -d "/usr/local/bin" ]; then
     PATH="/usr/local/bin:$PATH"
 fi
 
+if [ -d "/usr/local/sbin" ]; then
+    PATH="/usr/local/sbin:$PATH"
+fi
+
 if [ -d "/usr/local/share/npm/bin" ]; then
     PATH="/usr/local/share/npm/bin:$PATH"
 fi
 
 if [ -d "$HOME/narwhal/bin" ]; then
-    PATH="$HOME/narwhal/bin":$PATH
+    PATH="$HOME/narwhal/bin:$PATH"
 fi
 
 if [ -d "/usr/local/share/npm/bin" ]; then
-    PATH="/usr/local/share/npm/bin":$PATH
+    PATH="/usr/local/share/npm/bin:$PATH"
 fi
 
 if [ -d "/usr/share/maven/bin" ]; then
-    PATH="/usr/share/maven/bin":$PATH
+    PATH="/usr/share/maven/bin:$PATH"
 fi
