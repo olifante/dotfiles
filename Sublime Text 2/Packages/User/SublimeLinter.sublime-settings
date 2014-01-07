@@ -1,0 +1,9 @@
+{
+    // JavaScript linter: "gjslint" to use the closure javascript linter (if available),
+    // or either "jshint" or "jslint" to use a built in linter.
+    "javascript_linter": "gjslint",
+    "jshint_options": {
+        "white": false
+    },
+    "sublimelinter_executable_map": "/Users/the/Library/Application Support/Sublime Text 2/Packages/sublime-closure-linter/gjslint.py"
+}
