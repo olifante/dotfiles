@@ -77,6 +77,33 @@
         ]
     },
     {
+        "command": "prettyjson",
+        "keys": [
+            "alt+super+p"
+        ]
+    },
+    {
+        "command": "tag_indent_document",
+        "keys": [
+            "alt+super+i"
+        ]
+    },
+    {
+        "args": {
+            "action": "beautify"
+        },
+        "command": "sass_beautify",
+        "keys": [
+            "alt+super+b"
+        ]
+    },
+    {
+        "command": "fix_js_style",
+        "keys": [
+            "alt+super+j"
+        ]
+    },
+    {
         "args": {
             "set_translate_tabs": false
         },
