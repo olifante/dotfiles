@@ -3,10 +3,12 @@
 	"installed_packages":
 	[
 		"CSSLint",
+		"Djaneiro",
 		"Git",
 		"HTML5",
 		"Package Control",
 		"Pretty JSON",
+		"Python PEP8 Autoformat",
 		"Sass",
 		"SassBeautify",
 		"sublime-closure-linter",
