@@ -111,6 +111,15 @@
     },
     {
         "args": {
+            "syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+        },
+        "command": "set_file_type",
+        "keys": [
+            "ctrl+alt+super+d"
+        ]
+    },
+    {
+        "args": {
             "set_translate_tabs": false
         },
         "command": "unexpand_tabs",
