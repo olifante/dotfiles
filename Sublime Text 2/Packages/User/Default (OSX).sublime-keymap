@@ -77,6 +77,12 @@
         ]
     },
     {
+        "command": "pep8_autoformat",
+        "keys": [
+            "alt+super+r"
+        ]
+    },
+    {
         "command": "prettyjson",
         "keys": [
             "alt+super+p"
