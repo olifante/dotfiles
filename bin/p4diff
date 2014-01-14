@@ -6,5 +6,5 @@ realpath() {
 A=$(realpath "$1")
 B=$(realpath "$2")
 if [ $# -eq 2 ]; then
-	/Applications/p4merge.app/Contents/MacOS/p4merge "$A" "$B"
+    /Applications/p4merge.app/Contents/MacOS/p4merge "$A" "$B"
 fi
