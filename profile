@@ -32,6 +32,10 @@ if [ -d "$AWS_RDS_HOME/bin" ]; then
     PATH="$PATH:$AWS_RDS_HOME/bin"
 fi
 
+if [ -d "$HOME/homebrew/bin" ]; then
+    PATH="$HOME/homebrew/bin:$PATH"
+fi
+
 if [ -d "/usr/local/share/python" ]; then
     PATH="/usr/local/share/python:$PATH"
 fi
