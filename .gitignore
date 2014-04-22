@@ -9,5 +9,8 @@ bin/mate
 Sublime Text 2/Packages/User/Package Control.last-run
 Sublime Text 2/Packages/User/Side Bar.sublime-settings
 bin/subl
+bin/rds/
+bin/ec2/
+bin/tmux/
 Sublime Text 2/Packages/User/Package Control.cache/
 Sublime Text 2/Packages/User/Package Control.system-ca-bundle
