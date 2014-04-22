@@ -69,4 +69,9 @@ alias ssh-fingerprint='ssh-keygen -l -f'
 # of duplicates in the Open With submenu.
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 
+# Python
 alias pygcat="pygmentize -f terminal256 -O style=native -g"
+alias dj="django-admin.py"
+alias djp="django-admin.py --pythonpath=`pwd`"
+alias djs="django-admin.py --settings"
+alias djps="django-admin.py --pythonpath=`pwd` --settings"
