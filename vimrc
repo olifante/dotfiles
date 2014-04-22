@@ -108,3 +108,17 @@ set ignorecase smartcase   " Only be case sensitive when search has uppercase
 "set foldmethod=indent
 set foldmethod=marker " Use {{{ and }}} to define folding blocks
 "ru macros/matchit.vim      " Enable extended % matching
+
+" Load vim-plug, the minimalist vim plugin manager
+""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" Plug 'user/repo1', 'branch_or_tag'
+" " Plug 'user/repo2', { 'rtp': 'vim/plugin/dir', 'branch': 'devel' }
+" " Plug 'git@github.com:junegunn/vim-github-dashboard.git'
+" " ...
+
+call plug#end()
