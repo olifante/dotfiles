@@ -276,3 +276,8 @@ use_env() {
 }
 
 source /usr/local/Cellar/autoenv/0.1.0/activate.sh
+export AWS_RDS_HOME=/Users/the/bin/rds/RDSCli-1.15.001
+export EC2_HOME=/Users/the/bin/ec2/ec2-api-tools-1.6.13.0
+export EC2_REGION=eu-west-1
+export EC2_PRIVATE_KEY=$HOME/.ssh/s2m.pem
+export EC2_CERT=$HOME/.ssh/
