@@ -17,7 +17,15 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH"
+    PATH="$PATH:$HOME/bin"
+fi
+
+if [ -d "$EC2_HOME/bin" ]; then
+    PATH="$PATH:$EC2_HOME/bin"
+fi
+
+if [ -d "$AWS_RDS_HOME/bin" ]; then
+    PATH="$PATH:$AWS_RDS_HOME/bin"
 fi
 
 if [ -d "/usr/local/share/python" ]; then
