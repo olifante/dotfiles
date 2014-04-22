@@ -104,6 +104,8 @@
 
 [merge]
     tool = custom_p4merge
+	commit = no
+	ff = no
 [mergetool]
     keepBackup = false
 [mergetool "diffmerge"]
