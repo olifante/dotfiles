@@ -1,7 +1,16 @@
-#!/bin/sh
+#! /usr/bin/env bash
 
 # clj - Clojure launcher script
 # copied from http://trac.macports.org/browser/trunk/dports/lang/clojure/files/clj-rlwrap.sh
+
+## prevent referencing undefined variables (which default to "")
+set -o nounset
+## ignore failing commands
+set -o errexit
+## make pipe fail when any command in the pipe fails
+## use this when using errexit
+## Otherwise, it only checks that the last command succeeds
+set -o pipefail
 
 BREAK_CHARS="\(\){}[],^%\$#@\"\";:''|\\"
 

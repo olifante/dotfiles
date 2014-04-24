@@ -1,6 +1,15 @@
-#! /bin/sh
+#! /usr/bin/env bash
 # Desc  : Deploy dotfiles from repository to home dir.
 # Author: Vivien Didelot aka v0n
+
+## prevent referencing undefined variables (which default to "")
+set -o nounset
+## ignore failing commands
+set -o errexit
+## make pipe fail when any command in the pipe fails
+## use this when using errexit
+## Otherwise, it only checks that the last command succeeds
+set -o pipefail
 
 REPLACE_ALL=false
 
