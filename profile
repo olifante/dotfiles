@@ -20,6 +20,10 @@ if [ -d "$HOME/bin" ]; then
     PATH="$PATH:$HOME/bin"
 fi
 
+if [ -d "$HOME/.cabal/bin" ]; then
+    PATH="$PATH:$HOME/.cabal/bin"
+fi
+
 if [ -d "$EC2_HOME/bin" ]; then
     PATH="$PATH:$EC2_HOME/bin"
 fi
