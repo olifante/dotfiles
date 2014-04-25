@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 ## This script allows you to manage a list of tasks. Use it as a reminder.
 ## Tips: add `todo' at the end of your ~/.bashrc to run it on every shell opening ;)

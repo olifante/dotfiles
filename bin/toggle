@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 # I can use for instance:
 # wmctrl -a Calculatrice ; test $? -eq 0 || gnome-calculator

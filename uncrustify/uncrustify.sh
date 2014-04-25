@@ -30,7 +30,6 @@ if [ -d "$1" ]; then
     for file2indent in $file_list
     do
         echo "Indenting file $file2indent"
-    #!/bin/bash
     "/usr/local/bin/uncrustify" -f "$file2indent" -c "./objective-c.cfg" -o indentoutput.tmp
     mv indentoutput.tmp "$file2indent"
 
@@ -38,7 +37,6 @@ if [ -d "$1" ]; then
     else
         if [ -f "$1" ]; then
             echo "Indenting one file $1"
-    #!/bin/bash
     "/usr/local/bin/uncrustify" -f "$1" -c "./objective-c.cfg" -o indentoutput.tmp
     mv indentoutput.tmp "$1"
 
