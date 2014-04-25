@@ -72,6 +72,6 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 # Python
 alias pygcat="pygmentize -f terminal256 -O style=native -g"
 alias dj="django-admin.py"
-alias djp="django-admin.py --pythonpath=`pwd`"
+alias djp="django-admin.py --pythonpath=$(pwd)"
 alias djs="django-admin.py --settings"
-alias djps="django-admin.py --pythonpath=`pwd` --settings"
+alias djps="django-admin.py --pythonpath=$(pwd) --settings"

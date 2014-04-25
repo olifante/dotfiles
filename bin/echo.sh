@@ -11,4 +11,4 @@ set -o pipefail
 
 echo Number of parameters: echo $#
 echo Parameters:
-echo $*
+echo "$@"

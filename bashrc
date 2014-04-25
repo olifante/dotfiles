@@ -32,18 +32,18 @@ if [[ -n "$PS1" ]] ; then
         SSH_AUTH_SOCK="${SSHDIR}/.ssh-agent-socket"
         export SSHDIR SSH_AUTH_SOCK
 
-        if [ ! -S $SSH_AUTH_SOCK ]; then
-            ssh-agent -a $SSH_AUTH_SOCK
+        if [ ! -S "$SSH_AUTH_SOCK" ]; then
+            ssh-agent -a "$SSH_AUTH_SOCK"
             ssh-add
         fi
     fi
 
     sscreen () {
-        ssh -t ${1} /usr/bin/screen -xRR
+        ssh -t "${1}" /usr/bin/screen -xRR
     }
 
     sshmux () {
-        ssh $* -t 'tmux a || tmux || /bin/bash'
+        ssh "$@" -t 'tmux a || tmux || /bin/bash'
     }
 
     ## ignore ls, bg, fg, exit commands
@@ -81,7 +81,7 @@ if [[ -n "$PS1" ]] ; then
         fi
         export GIT_BRANCH='$(echo $GIT)'
         ## Are dotfiles clean?
-        $HOME/bin/dotfiles
+        "$HOME/bin/dotfiles"
     else
         ## git not found
         export PROMPT_COMMAND=""
@@ -196,7 +196,7 @@ ${COLOR_OFF}\
     fi
 
     ## Point to Java files
-    export JAVA_HOME=`/usr/libexec/java_home`
+    export JAVA_HOME=$(/usr/libexec/java_home)
     # export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
     # export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
 
@@ -219,13 +219,13 @@ ${COLOR_OFF}\
     hash brew &> /dev/null
     if [ $? -eq 0 ]; then
         ## Load z, a smart cd that learns your favorite directories
-        Z_SCRIPT=`brew --prefix`/etc/profile.d/z.sh
+        Z_SCRIPT=$(brew --prefix)/etc/profile.d/z.sh
         if [ -x "$Z_SCRIPT" ]; then
             ## install with "brew install z"
             source "$Z_SCRIPT"
         fi
         ## Load programmable bash completion
-        BASH_COMPLETION=`brew --prefix`/etc/bash_completion
+        BASH_COMPLETION=$(brew --prefix)/etc/bash_completion
         if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
             ## install with "brew install bash_completion"
             source "$BASH_COMPLETION"
@@ -255,15 +255,15 @@ fi # end of 'if [[ -n "$PS1" ]] ; then'
 ANDROID_HOME=/Users/the/frameworks/android-sdk-max_x86
 export ANDROID_HOME
 
-export WORKON_HOME=$HOME/.virtualenvs 
-source /usr/local/bin/virtualenvwrapper.sh 
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 
 use_env() {
   typeset venv
   venv="$1"
-  if [[ `basename "${VIRTUAL_ENV:t}"` != "$venv" ]]; then
-    if workon | grep $venv > /dev/null; then
+  if [[ $(basename "${VIRTUAL_ENV:t}") != "$venv" ]]; then
+    if workon | grep "$venv" > /dev/null; then
       workon "$venv"
     else
       echo -n "Create virtualenv $venv now? (Yn) "

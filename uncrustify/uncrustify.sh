@@ -26,7 +26,7 @@ if [ -d "$1" ]; then
 
     #echo "Filtering files using suffix ${filesuffix}"
 
-    file_list=`find ${1} -name "*.${filesuffix}" -type f`
+    file_list=$(find "${1}" -name "*.${filesuffix}" -type f)
     for file2indent in $file_list
     do
         echo "Indenting file $file2indent"

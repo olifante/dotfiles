@@ -9,4 +9,4 @@ set -o errexit
 ## Otherwise, it only checks that the last command succeeds
 set -o pipefail
 
-find . -type f -name \*.m -or -name \*.h | xargs /usr/local/bin/uncrustify -l OC -q -c objective-c.cfg --no-backup
+find . -type f -name \*.m -or -name \*.h -print0 | xargs -0 /usr/local/bin/uncrustify -l OC -q -c objective-c.cfg --no-backup
