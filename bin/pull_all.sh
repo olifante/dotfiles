@@ -9,10 +9,14 @@ set -o errexit
 ## Otherwise, it only checks that the last command succeeds
 set -o pipefail
 
+trap "{ reset; exit 1; }" INT
+
 for i in $(ls -d ./*/); do
     oldcd=$(pwd)
     cd "${i}"
     pwd
-    git pull
+    if ! git pull; then
+        echo "Error pulling ${i}"
+    fi
     cd "${oldcd}"
 done
