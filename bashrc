@@ -88,6 +88,9 @@ if [[ -n "$PS1" ]] ; then
         export GIT_BRANCH=""
     fi
 
+    ## Set TERM for 256color support (install ncurses-term is a plus)
+    export TERM='xterm-256color'
+
     function set_prompt {
 
         case $TERM in
@@ -184,9 +187,6 @@ ${COLOR_OFF}\
     if [[ -s "$RVM" ]]; then
         source "$RVM"
     fi
-
-    ## Set TERM for 256color support (install ncurses-term is a plus)
-    export TERM='gnome-256color'
 
     ## Define virtualenv variables
     export WORKON_HOME=$HOME/.virtualenvs
