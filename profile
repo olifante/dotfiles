@@ -48,6 +48,10 @@ if [ -d "/usr/local/share/npm/bin" ]; then
     PATH="/usr/local/share/npm/bin:$PATH"
 fi
 
+if [ -d "$HOME/go/bin" ]; then
+    PATH="$HOME/go/bin:$PATH"
+fi
+
 if [ -d "$HOME/narwhal/bin" ]; then
     PATH="$HOME/narwhal/bin:$PATH"
 fi
