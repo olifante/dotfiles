@@ -14,7 +14,8 @@
 	"ignored_packages":
 	[
 		"Vintage",
-		"BracketHighlighter"
+		"BracketHighlighter",
+		"Git"
 	],
 	"open_files_in_new_window": false,
 	"remember_open_files": false,
