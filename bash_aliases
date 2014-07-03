@@ -75,3 +75,8 @@ alias dj="django-admin.py"
 alias djp="django-admin.py --pythonpath=$(pwd)"
 alias djs="django-admin.py --settings"
 alias djps="django-admin.py --pythonpath=$(pwd) --settings"
+
+# Xcode
+alias swift='/Applications/Xcode6-Beta2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift'
+alias use_xcode5="sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer"
+alias use_xcode6="sudo xcode-select -switch /Applications/Xcode6-Beta2.app/Contents/Developer"
