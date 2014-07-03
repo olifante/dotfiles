@@ -26,6 +26,8 @@
 		"Stylus",
 		"sublime-closure-linter",
 		"SublimeLinter",
-		"Tag"
+		"Swift",
+		"Tag",
+		"VimL"
 	]
 }
