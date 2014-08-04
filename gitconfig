@@ -104,8 +104,8 @@
 
 [merge]
     tool = custom_p4merge
-	commit = no
-	ff = no
+    commit = no
+    ff = no
 [mergetool]
     keepBackup = false
 [mergetool "diffmerge"]
@@ -128,5 +128,5 @@
 [log]
     date = iso
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
