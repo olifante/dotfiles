@@ -13,6 +13,15 @@
     },
     {
         "args": {
+            "command": "sed 's/;$//g'"
+        },
+        "command": "run_external",
+        "keys": [
+            "alt+super+;"
+        ]
+    },
+    {
+        "args": {
             "command": "sort"
         },
         "command": "run_external",
