@@ -2,6 +2,7 @@
 	"auto_upgrade_last_run": 1350059250,
 	"installed_packages":
 	[
+		"Alignment",
 		"ApacheConf.tmLanguage",
 		"AsciiDoc",
 		"CoffeeScript",
@@ -23,6 +24,7 @@
 		"Python PEP8 Autoformat",
 		"Sass",
 		"SassBeautify",
+		"Scheme",
 		"Stylus",
 		"sublime-closure-linter",
 		"SublimeLinter",
