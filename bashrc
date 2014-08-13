@@ -163,7 +163,7 @@ ${COLOR_OFF}\
     ## enable color support of ls and also add handy aliases
     if [ -x /usr/bin/dircolors ]; then
         if [ -r "$HOME/.dircolors" ]; then
-            eval "$(dircolors -b $HOME/.dircolors)"
+            eval $(dircolors -b $HOME/.dircolors)
         else
             eval "$(dircolors -b)"
         fi
@@ -283,6 +283,7 @@ use_env() {
 }
 
 source /usr/local/Cellar/autoenv/0.1.0/activate.sh
+
 export AWS_RDS_HOME=/Users/the/bin/rds/RDSCli-1.15.001
 export EC2_HOME=/Users/the/bin/ec2/ec2-api-tools-1.6.13.0
 export EC2_REGION=eu-west-1
