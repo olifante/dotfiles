@@ -18,7 +18,7 @@ if [[ $OSTYPE == darwin* ]]; then
    fi
 elif [[ $OSTYPE == solaris* ]]; then TERM=dtterm
 elif [[ $OSTYPE == cygwin* ]]; then TERM=cygwin
-else; TERM=vt100
+else TERM=vt100
 fi
 export TERM
 
@@ -41,7 +41,9 @@ SAVEHIST=1000
 export LESS="--quit-at-eof --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --squeeze-blank-lines"
 export PAGER=less
 
-function sscreen { ssh -t ${1} /usr/bin/screen -xRR }
+function sscreen {
+    ssh -t "${1}" /usr/bin/screen -xRR
+}
 
 ## set zsh prompt
 
@@ -81,10 +83,10 @@ export PS1
 if [[ $OSTYPE == darwin* ]]; then alias lc='ls -G'
 elif [[ $OSTYPE == solaris* ]]; then
 	if [[ -x /usr/local/bin/ls ]]; then alias lc='/usr/local/bin/ls --color'
-	else; alias lc=ls
+	else alias lc=ls
 	fi
 elif [[ $OSTYPE == cygwin ]]; then alias lc='ls --color'
-else; alias lc=ls
+else alias lc=ls
 fi
 
 alias flep='pgrep -fl'
