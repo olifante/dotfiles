@@ -229,7 +229,14 @@ ${COLOR_OFF}\
         if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
             ## install with "brew install bash_completion"
             source "$BASH_COMPLETION"
+
         fi
+    fi
+
+    ## Activate django bash completion
+    DJANGO_BASH_COMPLETION="$HOME/bin/django_bash_completion"
+    if [[ -f "$DJANGO_BASH_COMPLETION" ]]; then
+        source "$DJANGO_BASH_COMPLETION"
     fi
 
     ## Use vim instead of vi if available
