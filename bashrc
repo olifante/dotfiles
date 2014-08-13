@@ -60,7 +60,7 @@ if [[ -n "$PS1" ]] ; then
         eval "$(SHELL=/bin/sh lesspipe)"
     fi
 
-    GIT_COMPLETION="$HOME/bin/git-completion.bash"
+    GIT_COMPLETION="$(brew --prefix git)/etc/bash_completion.d/git-completion.bash"
     if [[ -s "$GIT_COMPLETION" ]]; then
         source "$GIT_COMPLETION"
     fi
