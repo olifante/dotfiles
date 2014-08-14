@@ -2,6 +2,7 @@
 	"auto_upgrade_last_run": 1350059250,
 	"installed_packages":
 	[
+		"AdvancedNewFile",
 		"Alignment",
 		"ApacheConf.tmLanguage",
 		"AsciiDoc",
