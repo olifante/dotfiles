@@ -36,6 +36,10 @@ if [ -d "/usr/local/share/python" ]; then
     PATH="/usr/local/share/python:$PATH"
 fi
 
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [ -d "/usr/local/bin" ]; then
     PATH="/usr/local/bin:$PATH"
 fi
