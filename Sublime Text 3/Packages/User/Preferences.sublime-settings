@@ -1,0 +1,15 @@
+{
+    "color_scheme": "Packages/User/Mac Classic (SL).tmTheme",
+    "draw_white_space": "all",
+    "ensure_newline_at_eof_on_save": true,
+    "find_selected_text": true,
+    "highlight_line": true,
+    "ignored_packages": [
+        "Vintage"
+    ],
+    "save_on_focus_lost": true,
+    "tab_size": 4,
+    "trim_automatic_white_space": true,
+    "trim_trailing_white_space_on_save": true,
+    "zzzz": "keep this at the bottom to avoid juggling trailing commas"
+}
