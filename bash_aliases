@@ -29,12 +29,12 @@ case $OSTYPE in
 esac
 
 # ls aliases
-alias ll='l -l@'
+alias ll='l -l'
 alias lt='l -rt'
 alias la='l -A'
-alias llt='l -l@rt'
-alias lla='l -l@A'
-alias llat='l -l@Art'
+alias llt='l -lrt'
+alias lla='l -lA'
+alias llat='l -lArt'
 
 # safe file operations
 alias mv='mv -i'
