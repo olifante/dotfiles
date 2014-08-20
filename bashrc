@@ -266,7 +266,8 @@ ANDROID_HOME=/Users/the/frameworks/android-sdk-max_x86
 export ANDROID_HOME
 
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=$HOME/homebrew/bin/python3
+source $HOME/homebrew/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 
 use_env() {
