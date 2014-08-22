@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 # General aliases
 
 case $OSTYPE in
