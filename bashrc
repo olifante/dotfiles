@@ -190,9 +190,13 @@ ${COLOR_OFF}\
     fi
 
     ## Define virtualenv variables
-    export WORKON_HOME=$HOME/.virtualenvs
     VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
     if [[ -s "$VIRTUALENVWRAPPER" ]]; then
+        export WORKON_HOME=$HOME/.virtualenvs
+        export PIP_VIRTUALENV_BASE=$WORKON_HOME
+        export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+        export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+        export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
         source "$VIRTUALENVWRAPPER"
     fi
 
@@ -265,11 +269,6 @@ fi # end of 'if [[ -n "$PS1" ]] ; then'
 ANDROID_HOME=/Users/the/frameworks/android-sdk-max_x86
 export ANDROID_HOME
 
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=$HOME/homebrew/bin/python3
-source $HOME/homebrew/bin/virtualenvwrapper.sh
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-
 use_env() {
   typeset venv
   venv="$1"
@@ -287,4 +286,8 @@ use_env() {
 }
 
 source /usr/local/Cellar/autoenv/0.1.0/activate.sh
+
+export EC2_REGION=eu-west-1
+export EC2_PRIVATE_KEY=$HOME/.ssh/s2m.pem
+export EC2_CERT=$HOME/.ssh/
 export GOPATH=$HOME/go
