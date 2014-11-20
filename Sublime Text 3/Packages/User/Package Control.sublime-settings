@@ -3,11 +3,19 @@
 	[
 		"Anaconda",
 		"GitGutter",
+		"HTMLBeautify",
+		"INI",
+		"Jade",
+		"Javascript Beautify",
+		"Jinja2",
 		"Pretty JSON",
+		"Python PEP8 Autoformat",
+		"Rake",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-pep8",
-		"SublimeLinter-pyflakes"
+		"SublimeLinter-pyflakes",
+		"Tag"
 	]
 }
