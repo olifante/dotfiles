@@ -291,3 +291,5 @@ export EC2_REGION=eu-west-1
 export EC2_PRIVATE_KEY=$HOME/.ssh/s2m.pem
 export EC2_CERT=$HOME/.ssh/
 export GOPATH=$HOME/go
+
+complete -C aws_completer aws
