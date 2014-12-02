@@ -17,36 +17,12 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [ -d "$HOME/bin" ]; then
-    PATH="$PATH:$HOME/bin"
-fi
-
-if [ -d "$HOME/.cabal/bin" ]; then
-    PATH="$PATH:$HOME/.cabal/bin"
-fi
-
-if [ -d "$EC2_HOME/bin" ]; then
-    PATH="$PATH:$EC2_HOME/bin"
-fi
-
-if [ -d "$AWS_RDS_HOME/bin" ]; then
-    PATH="$PATH:$AWS_RDS_HOME/bin"
-fi
-
 if [ -d "$HOME/homebrew/bin" ]; then
     PATH="$HOME/homebrew/bin:$PATH"
 fi
 
-if [ -d "/usr/local/share/python" ]; then
-    PATH="/usr/local/share/python:$PATH"
-fi
-
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -d "/usr/local/bin" ]; then
-    PATH="/usr/local/bin:$PATH"
 fi
 
 if [ -d "/usr/local/sbin" ]; then
@@ -71,4 +47,12 @@ fi
 
 if [ -d "/usr/share/maven/bin" ]; then
     PATH="/usr/share/maven/bin:$PATH"
+fi
+
+if [ -d "$HOME/bin" ]; then
+    PATH="$PATH:$HOME/bin"
+fi
+
+if [ -d "$HOME/.cabal/bin" ]; then
+    PATH="$PATH:$HOME/.cabal/bin"
 fi
