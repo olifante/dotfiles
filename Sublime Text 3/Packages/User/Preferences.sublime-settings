@@ -8,6 +8,7 @@
 	[
 		"Vintage"
 	],
+	"rulers": [78, 118],
 	"save_on_focus_lost": true,
 	"tab_size": 4,
 	"trim_automatic_white_space": true,
