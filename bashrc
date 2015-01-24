@@ -61,7 +61,7 @@ if [[ -n "$PS1" ]] ; then
         eval "$(SHELL=/bin/sh lesspipe)"
     fi
 
-    GIT_COMPLETION="$(brew --prefix git)/etc/bash_completion.d/git-completion.bash"
+    GIT_COMPLETION="/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
     if [[ -s "$GIT_COMPLETION" ]]; then
         source "$GIT_COMPLETION"
     fi
@@ -227,13 +227,13 @@ ${COLOR_OFF}\
     hash brew &> /dev/null
     if [ $? -eq 0 ]; then
         ## Load z, a smart cd that learns your favorite directories
-        Z_SCRIPT=$(brew --prefix)/etc/profile.d/z.sh
+        Z_SCRIPT="$HOME/homebrew/etc/profile.d/z.sh"
         if [ -x "$Z_SCRIPT" ]; then
             ## install with "brew install z"
             source "$Z_SCRIPT"
         fi
         ## Load programmable bash completion
-        BASH_COMPLETION=$(brew --prefix)/etc/bash_completion
+        BASH_COMPLETION="$HOME/homebrew/etc/bash_completion"
         if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
             ## install with "brew install bash_completion"
             source "$BASH_COMPLETION"
@@ -285,11 +285,10 @@ use_env() {
   fi
 }
 
-source /usr/local/Cellar/autoenv/0.1.0/activate.sh
-
 export EC2_REGION=eu-west-1
 export EC2_PRIVATE_KEY=$HOME/.ssh/s2m.pem
 export EC2_CERT=$HOME/.ssh/
+source "$HOME/homebrew/Cellar/autoenv/0.1.0/activate.sh"
 export GOPATH=$HOME/go
 
 complete -C aws_completer aws
