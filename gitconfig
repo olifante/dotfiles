@@ -53,6 +53,7 @@
     lol      = log --pretty=oneline --abbrev-commit --graph --decorate
     lola     = log --pretty=oneline --abbrev-commit --graph --decorate --all
     lg       = log --pretty=oneline --abbrev-commit -g # searches reflog
+    lrel     = log --graph --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit --date=relative
 
     # log search aliases
     lgrep      = log --pretty=oneline --abbrev-commit --grep
@@ -128,5 +129,6 @@
 [log]
     date = iso
 [filter "media"]
-    clean = git-media-clean %f
-    smudge = git-media-smudge %f
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
