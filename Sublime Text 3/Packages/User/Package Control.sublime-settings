@@ -2,11 +2,6 @@
 	"in_process_packages":
 	[
 	],
-	"installed_dependencies":
-	[
-		"0_package_control_loader",
-		"bz2"
-	],
 	"installed_packages":
 	[
 		"Anaconda",
@@ -17,10 +12,12 @@
 		"Jade",
 		"Javascript Beautify",
 		"Jinja2",
+		"nginx",
 		"Package Control",
 		"Pretty JSON",
 		"Python PEP8 Autoformat",
 		"Rake",
+		"ReactJS",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
