@@ -7,10 +7,9 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Anaconda",
-		"SideBarEnhancements",
 		"Vintage",
-		"Swift"
+		"Swift",
+		"SideBarEnhancements"
 	],
 	"rulers":
 	[
