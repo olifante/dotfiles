@@ -254,9 +254,6 @@ ${COLOR_OFF}\
         alias vi=vim
     fi
 
-    ## Use vi keybindings for command-line editing
-    set -o vi
-
     ## Set the EDITOR variable
     SUBLIME_SHORTCUT="$HOME/dotfiles/bin/subl"
     if [ -x "$SUBLIME_SHORTCUT" ]; then
