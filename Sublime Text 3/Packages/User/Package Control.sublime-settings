@@ -5,6 +5,8 @@
 	"installed_packages":
 	[
 		"Anaconda",
+		"AsciiDoc",
+		"Babel",
 		"Emmet",
 		"GitGutter",
 		"HTMLBeautify",
@@ -19,8 +21,12 @@
 		"Rake",
 		"ReactJS",
 		"SideBarEnhancements",
+		"StringEncode",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-csslint",
+		"SublimeLinter-jshint",
+		"SublimeLinter-jsxhint",
 		"SublimeLinter-pep8",
 		"SublimeLinter-pyflakes",
 		"Swift",
