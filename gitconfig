@@ -81,6 +81,7 @@
     default = tracking
 [branch]
     autosetuprebase = always
+    autosetupmerge = true
 [branch "master"]
     rebase = true
 
