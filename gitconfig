@@ -12,7 +12,7 @@
     ## see http://lostechies.com/keithdahlby/2011/04/06/windows-git-tip-hide-carriage-return-in-diff/
     autocrlf = false
     whitespace = trailing-space,space-before-tab
-	filemode = false
+    filemode = false
 [github]
     #user = olifante
     #user = tiago-g-henriques
