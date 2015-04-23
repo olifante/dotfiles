@@ -293,3 +293,8 @@ export GOPATH=$HOME/go
 export HOMEBREW_GITHUB_API_TOKEN=69116dd9513dec8bc64b281cfd570dfc7d4ad9de
 
 complete -C aws_completer aws
+
+function httpless {
+    # `httpless example.org'
+    http --follow --pretty=all --print=hb "$@" | less -R;
+}
