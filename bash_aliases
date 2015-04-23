@@ -51,6 +51,7 @@ alias timestamp='date "+%Y-%m-%d_%H:%M:%S"'
 alias h='history'
 
 alias ri='ri -Tf ansi'
+alias dircmp='diff -arq'
 
 alias ..='cd ..'
 alias ...='cd ..; cd ..'
