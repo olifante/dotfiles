@@ -298,3 +298,5 @@ function httpless {
     # `httpless example.org'
     http --follow --pretty=all --print=hb "$@" | less -R;
 }
+
+export LC_ALL="en_US.UTF-8"
