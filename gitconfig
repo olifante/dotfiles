@@ -87,6 +87,7 @@
 
 [diff]
     tool = p4diff
+    mnemonicprefix = true
 [difftool "echo"]
     cmd = "echo.sh \"$LOCAL\" \"$REMOTE\""
 [difftool "filemerge"]
