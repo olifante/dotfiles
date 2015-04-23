@@ -1,0 +1,8 @@
+[
+    {
+        "command": "anaconda_next_lint_error",
+        "keys": [
+            "ctrl+shift+e"
+        ]
+    }
+]
