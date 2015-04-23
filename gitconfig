@@ -134,6 +134,8 @@
     clean = git media clean %f
     smudge = git media smudge %f
     required = true
+[rerere]
+    enabled = true
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
     path =
