@@ -4,5 +4,142 @@
         "keys": [
             "ctrl+shift+e"
         ]
+    },
+    {
+        "command": "paste_and_indent",
+        "keys": [
+            "super+shift+v"
+        ]
+    },
+    {
+        "command": "new_file",
+        "keys": [
+            "super+n"
+        ]
+    },
+    {
+        "args": {
+            "command": "sed 's/;$//g'"
+        },
+        "command": "run_external",
+        "keys": [
+            "alt+super+;"
+        ]
+    },
+    {
+        "args": {
+            "command": "sort"
+        },
+        "command": "run_external",
+        "keys": [
+            "alt+super+s"
+        ]
+    },
+    {
+        "args": {
+            "command": "sort -u"
+        },
+        "command": "run_external",
+        "keys": [
+            "alt+super+u"
+        ]
+    },
+    {
+        "command": "prompt_run_external",
+        "keys": [
+            "alt+super+r"
+        ]
+    },
+    {
+        "args": {
+            "overlay": "command_palette",
+            "text": "Package Control: "
+        },
+        "command": "show_overlay",
+        "keys": [
+            "alt+super+p"
+        ]
+    },
+    {
+        "command": "alignment",
+        "keys": [
+            "alt+super+a"
+        ]
+    },
+    {
+        "command": "reveal_in_side_bar",
+        "keys": [
+            "alt+super+b"
+        ]
+    },
+    {
+        "args": {
+            "panel": "console",
+            "toggle": true
+        },
+        "command": "show_panel",
+        "keys": [
+            "alt+super+backquote"
+        ]
+    },
+    {
+        "args": {
+            "set_translate_tabs": true
+        },
+        "command": "expand_tabs",
+        "keys": [
+            "alt+super+z"
+        ]
+    },
+    {
+        "command": "pep8_autoformat",
+        "keys": [
+            "alt+super+r"
+        ]
+    },
+    {
+        "command": "prettyjson",
+        "keys": [
+            "alt+super+p"
+        ]
+    },
+    {
+        "command": "tag_indent_document",
+        "keys": [
+            "alt+super+i"
+        ]
+    },
+    {
+        "args": {
+            "action": "beautify"
+        },
+        "command": "sass_beautify",
+        "keys": [
+            "alt+super+b"
+        ]
+    },
+    {
+        "command": "fix_js_style",
+        "keys": [
+            "alt+super+j"
+        ]
+    },
+    {
+        "args": {
+            "syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+        },
+        "command": "set_file_type",
+        "keys": [
+            "ctrl+alt+super+d"
+        ]
+    },
+    {
+        "args": {
+            "set_translate_tabs": false
+        },
+        "command": "unexpand_tabs",
+        "keys": [
+            "alt+super+x"
+        ]
     }
 ]
