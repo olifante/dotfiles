@@ -23,7 +23,7 @@ def configure(repl):
     repl.show_signature = True
 
     # Show docstring (bool).
-    repl.show_docstring = False
+    repl.show_docstring = True
 
     # Show completions. (NONE, POP_UP, MULTI_COLUMN or TOOLBAR)
     repl.completion_visualisation = CompletionVisualisation.MULTI_COLUMN
