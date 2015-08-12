@@ -56,7 +56,7 @@ for FILE in * ; do
   LINK=$HOME/.$FILE
 
   case $FILE in
-    $0|README.markdown)
+    $0|README.markdown|install.sh|pip_freeze.txt)
       ;; # ignore
     bin)
       LINK=$HOME/$FILE
