@@ -97,8 +97,6 @@ def configure(repl):
 
     # Custom key binding for some simple autocorrection while typing.
     corrections = {
-        'impotr': 'import',
-        'pritn': 'print',
     }
 
     @repl.add_key_binding(' ')
