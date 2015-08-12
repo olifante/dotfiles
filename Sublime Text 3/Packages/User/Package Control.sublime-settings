@@ -5,6 +5,7 @@
 	"installed_packages":
 	[
 		"Anaconda",
+		"ApacheConf.tmLanguage",
 		"AsciiDoc",
 		"Babel",
 		"Emmet",
