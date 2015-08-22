@@ -190,13 +190,14 @@ ${COLOR_OFF}\
     fi
 
     ## Define virtualenv variables
+    export VIRTUALENVWRAPPER_PYTHON=`which python`
+    export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
+    export WORKON_HOME=$HOME/.virtualenvs
     if [[ -s "/usr/local/bin/virtualenvwrapper_lazy.sh" ]]; then
-        export WORKON_HOME=$HOME/.virtualenvs
         export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
         source "/usr/local/bin/virtualenvwrapper_lazy.sh"
         echo configured /usr/local/bin virtualenvwrapper
     elif [[ -s "$HOME/homebrew/bin/virtualenvwrapper_lazy.sh" ]]; then
-        export WORKON_HOME=$HOME/.virtualenvs
         export VIRTUALENVWRAPPER_SCRIPT="$HOME/homebrew/bin/virtualenvwrapper.sh"
         source "$HOME/homebrew/bin/virtualenvwrapper_lazy.sh"
         echo configured homebrew virtualenvwrapper
@@ -299,3 +300,5 @@ function httpless {
 }
 
 export LC_ALL="en_US.UTF-8"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8

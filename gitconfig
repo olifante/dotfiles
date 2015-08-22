@@ -129,12 +129,12 @@
 [user]
     name = Tiago Henriques
     #email = trinosauro@gmail.com
-    email = the@sinnerschrader-mobile.com
+	email = tiago.henriques@gmail.com
 [log]
     date = iso
 [filter "media"]
-    clean = git media clean %f
-    smudge = git media smudge %f
+	clean = git media clean %f
+	smudge = git media smudge %f
     required = true
 [rerere]
     enabled = true
@@ -144,3 +144,5 @@
 [mergetool "sourcetree"]
     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
+[url "https://"]
+	insteadOf = git://
