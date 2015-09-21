@@ -11,6 +11,7 @@
 	"ignored_packages":
 	[
 		"SideBarEnhancements",
+		"Vintage",
 		"Swift"
 	],
 	"open_files_in_new_window": false,
