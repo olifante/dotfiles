@@ -14,9 +14,7 @@
     whitespace = trailing-space,space-before-tab
     filemode = false
 [github]
-    #user = olifante
-    #user = tiago-g-henriques
-    user = thethethe
+    user = olifante
 [alias]
     s    = status -sb
     b    = branch
@@ -130,8 +128,8 @@
 
 [user]
     name = Tiago Henriques
-    #email = trinosauro@gmail.com
-	email = tiago.henriques@gmail.com
+    email = trinosauro@gmail.com
+    #email = tiago.henriques@gmail.com
 [log]
     date = iso
 [filter "media"]
