@@ -57,4 +57,10 @@ if [ -d "$HOME/.cabal/bin" ]; then
     PATH="$PATH:$HOME/.cabal/bin"
 fi
 
+if [ -d "/usr/local/opt/go/libexec/bin" ]; then
+    PATH="$PATH:/usr/local/opt/go/libexec/bin"
+fi
+
+export PATH
+
 set -o vi
