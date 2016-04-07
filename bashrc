@@ -285,7 +285,7 @@ use_env() {
 export EC2_REGION=eu-west-1
 export EC2_PRIVATE_KEY=$HOME/.ssh/s2m.pem
 export EC2_CERT=$HOME/.ssh/
-source "$HOME/homebrew/Cellar/autoenv/0.1.0/activate.sh"
+source "/usr/local/Cellar/autoenv/0.1.0/activate.sh"
 export GOPATH=$HOME/go
 export HOMEBREW_GITHUB_API_TOKEN=69116dd9513dec8bc64b281cfd570dfc7d4ad9de
 
