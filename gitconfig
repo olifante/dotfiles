@@ -10,7 +10,7 @@
     pager        = less -FRSX
     excludesfile = ~/.gitignore
     ## see http://lostechies.com/keithdahlby/2011/04/06/windows-git-tip-hide-carriage-return-in-diff/
-    autocrlf = false
+    autocrlf = input
     whitespace = trailing-space,space-before-tab
     filemode = false
 [github]
@@ -27,6 +27,7 @@
     co   = checkout
     dc   = diff --cached
     d    = diff
+    dns  = diff --name-status
     dt   = difftool
     mt   = mergetool
     ls   = ls-files
@@ -44,6 +45,7 @@
 
     # log aliases
     lpatch   = log -p
+    lns      = log --name-status
     lfuller  = log --pretty=fuller  --abbrev-commit
     lfull    = log --pretty=full    --abbrev-commit
     lmedium  = log --pretty=medium  --abbrev-commit
