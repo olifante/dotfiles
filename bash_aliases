@@ -10,6 +10,8 @@ case $OSTYPE in
         alias plxml=' plutil -convert xml1 -o -'
         alias pljson=' plutil -convert json -o -'
         alias flep='pgrep -ifl'
+        # Clear defaults caches, reload them, and then kill everything!
+        alias fixpref='sudo killall -SIGKILL cfprefsd && killall Dock && killall Finder'
         ;;
     freebsd*)
         alias l='ls -G'
