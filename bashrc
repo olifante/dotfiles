@@ -190,17 +190,14 @@ ${COLOR_OFF}\
     fi
 
     ## Define virtualenv variables
-    export VIRTUALENVWRAPPER_PYTHON=`which python`
-    export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
-    export WORKON_HOME=$HOME/.virtualenvs
-    if [[ -s "/usr/local/bin/virtualenvwrapper_lazy.sh" ]]; then
-        export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-        source "/usr/local/bin/virtualenvwrapper_lazy.sh"
-        echo configured /usr/local/bin virtualenvwrapper
-    elif [[ -s "$HOME/homebrew/bin/virtualenvwrapper_lazy.sh" ]]; then
-        export VIRTUALENVWRAPPER_SCRIPT="$HOME/homebrew/bin/virtualenvwrapper.sh"
-        source "$HOME/homebrew/bin/virtualenvwrapper_lazy.sh"
-        echo configured homebrew virtualenvwrapper
+    VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
+    if [[ -s "$VIRTUALENVWRAPPER" ]]; then
+        export WORKON_HOME=$HOME/.virtualenvs
+        export PIP_VIRTUALENV_BASE=$WORKON_HOME
+        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+        export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+        export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+        source "$VIRTUALENVWRAPPER"
     fi
 
     ## Point to Java files
