@@ -19,35 +19,59 @@
     },
     {
         "args": {
-            "command": "sed 's/;$//g'"
+            "command": [
+                "sed",
+                "s/;$//g"
+            ]
         },
-        "command": "run_external",
+        "caption": "Remove trailing semicolons",
+        "command": "filter_pipes_process",
         "keys": [
             "alt+super+;"
         ]
     },
     {
         "args": {
-            "command": "sort"
+            "command": [
+                "sort"
+            ]
         },
-        "command": "run_external",
+        "caption": "Sort",
+        "command": "filter_pipes_process",
         "keys": [
             "alt+super+s"
         ]
     },
     {
         "args": {
-            "command": "sort -u"
+            "command": [
+                "sort",
+                "-u"
+            ]
         },
-        "command": "run_external",
+        "caption": "Sort unique",
+        "command": "filter_pipes_process",
         "keys": [
             "alt+super+u"
         ]
     },
     {
-        "command": "prompt_run_external",
+        "args": {
+            "command": [
+                "sort",
+                "-n"
+            ]
+        },
+        "caption": "Sort numerical",
+        "command": "filter_pipes_process",
         "keys": [
-            "alt+super+r"
+            "alt+super+n"
+        ]
+    },
+    {
+        "command": "filter_pipes_exec_prompt",
+        "keys": [
+            "super+shift+r"
         ]
     },
     {
