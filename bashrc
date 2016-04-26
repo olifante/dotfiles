@@ -40,7 +40,7 @@ if [[ -n "$PS1" ]] ; then
     fi
 
     sscreen () {
-        ssh -t "${1}" /usr/bin/screen -xRR
+        ssh -t "${1}" screen -xRR
     }
 
     sshmux () {
