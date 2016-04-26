@@ -190,14 +190,17 @@ ${COLOR_OFF}\
     fi
 
     ## Define virtualenv variables
-    VIRTUALENVWRAPPER="/usr/local/bin/virtualenvwrapper.sh"
-    if [[ -s "$VIRTUALENVWRAPPER" ]]; then
-        export WORKON_HOME=$HOME/.virtualenvs
-        export PIP_VIRTUALENV_BASE=$WORKON_HOME
-        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-        export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-        export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-        source "$VIRTUALENVWRAPPER"
+    export VIRTUALENVWRAPPER_PYTHON="$HOME/homebrew/bin/python"
+    export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/homebrew/bin/virtualenv"
+    export WORKON_HOME="$HOME/.virtualenvs"
+    if [[ -s "$HOME/homebrew/bin/virtualenvwrapper_lazy.sh" ]]; then
+        export VIRTUALENVWRAPPER_SCRIPT="$HOME/homebrew/bin/virtualenvwrapper.sh"
+        source "$VIRTUALENVWRAPPER_SCRIPT"
+        echo configured homebrew virtualenvwrapper
+    elif [[ -s "/usr/local/bin/virtualenvwrapper_lazy.sh" ]]; then
+        export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+        source "$VIRTUALENVWRAPPER_SCRIPT"
+        echo configured /usr/local/bin virtualenvwrapper
     fi
 
     ## Point to Java files
@@ -285,7 +288,7 @@ use_env() {
 export EC2_REGION=eu-west-1
 export EC2_PRIVATE_KEY=$HOME/.ssh/s2m.pem
 export EC2_CERT=$HOME/.ssh/
-source "/usr/local/Cellar/autoenv/0.1.0/activate.sh"
+source "$HOME/homebrew/Cellar/autoenv/0.1.0/activate.sh"
 export GOPATH=$HOME/go
 export HOMEBREW_GITHUB_API_TOKEN=fef82c4d96976234c2895ea3ed6c4f500523cc85
 
