@@ -1,83 +1,49 @@
 {
-	"user":
-	{
+	"user": {
 		"debug": true,
 		"delay": 0.25,
 		"error_color": "D02000",
 		"gutter_theme": "",
-		"gutter_theme_excludes":
-		[
-		],
+		"gutter_theme_excludes": [],
 		"lint_mode": "save only",
-		"linters":
-		{
-			"eslint":
-			{
+		"linters": {
+			"eslint": {
 				"@disable": true,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				]
+				"args": [],
+				"excludes": []
 			},
-			"pep8":
-			{
+			"pep8": {
 				"@disable": true,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				],
+				"args": [],
+				"excludes": [],
 				"ignore": "",
 				"max-line-length": null,
 				"select": ""
 			},
-			"pyflakes":
-			{
+			"pyflakes": {
 				"@disable": true,
-				"args":
-				[
-				],
-				"excludes":
-				[
-				]
+				"args": [],
+				"excludes": []
 			}
 		},
 		"mark_style": "outline",
 		"no_column_highlights_line": false,
 		"passive_warnings": false,
-		"paths":
-		{
-			"linux":
-			[
-			],
-			"osx":
-			[
-			],
-			"windows":
-			[
-			]
+		"paths": {
+			"linux": [],
+			"osx": [],
+			"windows": []
 		},
-		"python_paths":
-		{
-			"linux":
-			[
-			],
-			"osx":
-			[
-			],
-			"windows":
-			[
-			]
+		"python_paths": {
+			"linux": [],
+			"osx": [],
+			"windows": []
 		},
 		"rc_search_limit": 3,
 		"shell_timeout": 10,
 		"show_errors_on_save": true,
 		"show_marks_in_minimap": true,
-		"syntax_map":
-		{
+		"syntax_map": {
 			"JavaScript": "javascript",
 			"html (django)": "html",
 			"html (rails)": "html",
