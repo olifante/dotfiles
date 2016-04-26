@@ -287,7 +287,7 @@ export EC2_PRIVATE_KEY=$HOME/.ssh/s2m.pem
 export EC2_CERT=$HOME/.ssh/
 source "/usr/local/Cellar/autoenv/0.1.0/activate.sh"
 export GOPATH=$HOME/go
-export HOMEBREW_GITHUB_API_TOKEN=69116dd9513dec8bc64b281cfd570dfc7d4ad9de
+export HOMEBREW_GITHUB_API_TOKEN=fef82c4d96976234c2895ea3ed6c4f500523cc85
 
 complete -C aws_completer aws
 
