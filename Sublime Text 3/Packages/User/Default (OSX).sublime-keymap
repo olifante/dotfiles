@@ -1,169 +1,169 @@
 [
-    {
-        "command": "anaconda_next_lint_error",
-        "keys": [
-            "ctrl+shift+e"
-        ]
-    },
-    {
-        "command": "paste_and_indent",
-        "keys": [
-            "super+shift+v"
-        ]
-    },
-    {
-        "command": "new_file",
-        "keys": [
-            "super+n"
-        ]
-    },
-    {
-        "args": {
-            "command": [
-                "sed",
-                "s/;$//g"
-            ]
-        },
-        "caption": "Remove trailing semicolons",
-        "command": "filter_pipes_process",
-        "keys": [
-            "alt+super+;"
-        ]
-    },
-    {
-        "args": {
-            "command": [
-                "sort"
-            ]
-        },
-        "caption": "Sort",
-        "command": "filter_pipes_process",
-        "keys": [
-            "alt+super+s"
-        ]
-    },
-    {
-        "args": {
-            "command": [
-                "sort",
-                "-u"
-            ]
-        },
-        "caption": "Sort unique",
-        "command": "filter_pipes_process",
-        "keys": [
-            "alt+super+u"
-        ]
-    },
-    {
-        "args": {
-            "command": [
-                "sort",
-                "-n"
-            ]
-        },
-        "caption": "Sort numerical",
-        "command": "filter_pipes_process",
-        "keys": [
-            "alt+super+n"
-        ]
-    },
-    {
-        "command": "filter_pipes_exec_prompt",
-        "keys": [
-            "super+shift+r"
-        ]
-    },
-    {
-        "args": {
-            "overlay": "command_palette",
-            "text": "Package Control: "
-        },
-        "command": "show_overlay",
-        "keys": [
-            "alt+super+p"
-        ]
-    },
-    {
-        "command": "alignment",
-        "keys": [
-            "alt+super+a"
-        ]
-    },
-    {
-        "command": "reveal_in_side_bar",
-        "keys": [
-            "alt+super+b"
-        ]
-    },
-    {
-        "args": {
-            "panel": "console",
-            "toggle": true
-        },
-        "command": "show_panel",
-        "keys": [
-            "alt+super+backquote"
-        ]
-    },
-    {
-        "args": {
-            "set_translate_tabs": true
-        },
-        "command": "expand_tabs",
-        "keys": [
-            "alt+super+z"
-        ]
-    },
-    {
-        "command": "pep8_autoformat",
-        "keys": [
-            "alt+super+r"
-        ]
-    },
-    {
-        "command": "prettyjson",
-        "keys": [
-            "alt+super+p"
-        ]
-    },
-    {
-        "command": "tag_indent_document",
-        "keys": [
-            "alt+super+i"
-        ]
-    },
-    {
-        "args": {
-            "action": "beautify"
-        },
-        "command": "sass_beautify",
-        "keys": [
-            "alt+super+b"
-        ]
-    },
-    {
-        "command": "fix_js_style",
-        "keys": [
-            "alt+super+j"
-        ]
-    },
-    {
-        "args": {
-            "syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
-        },
-        "command": "set_file_type",
-        "keys": [
-            "ctrl+alt+super+d"
-        ]
-    },
-    {
-        "args": {
-            "set_translate_tabs": false
-        },
-        "command": "unexpand_tabs",
-        "keys": [
-            "alt+super+x"
-        ]
-    }
+	{
+		"command": "anaconda_next_lint_error",
+		"keys": [
+			"ctrl+shift+e"
+		]
+	},
+	{
+		"command": "paste_and_indent",
+		"keys": [
+			"super+shift+v"
+		]
+	},
+	{
+		"command": "new_file",
+		"keys": [
+			"super+n"
+		]
+	},
+	{
+		"args": {
+			"command": [
+				"sed",
+				"s/;$//g"
+			]
+		},
+		"caption": "Remove trailing semicolons",
+		"command": "filter_pipes_process",
+		"keys": [
+			"alt+super+;"
+		]
+	},
+	{
+		"args": {
+			"command": [
+				"sort"
+			]
+		},
+		"caption": "Sort",
+		"command": "filter_pipes_process",
+		"keys": [
+			"alt+super+s"
+		]
+	},
+	{
+		"args": {
+			"command": [
+				"sort",
+				"-u"
+			]
+		},
+		"caption": "Sort unique",
+		"command": "filter_pipes_process",
+		"keys": [
+			"alt+super+u"
+		]
+	},
+	{
+		"args": {
+			"command": [
+				"sort",
+				"-n"
+			]
+		},
+		"caption": "Sort numerical",
+		"command": "filter_pipes_process",
+		"keys": [
+			"alt+super+n"
+		]
+	},
+	{
+		"command": "filter_pipes_exec_prompt",
+		"keys": [
+			"super+shift+r"
+		]
+	},
+	{
+		"args": {
+			"overlay": "command_palette",
+			"text": "Package Control: "
+		},
+		"command": "show_overlay",
+		"keys": [
+			"alt+super+p"
+		]
+	},
+	{
+		"command": "alignment",
+		"keys": [
+			"alt+super+a"
+		]
+	},
+	{
+		"command": "reveal_in_side_bar",
+		"keys": [
+			"alt+super+b"
+		]
+	},
+	{
+		"args": {
+			"panel": "console",
+			"toggle": true
+		},
+		"command": "show_panel",
+		"keys": [
+			"alt+super+backquote"
+		]
+	},
+	{
+		"args": {
+			"set_translate_tabs": true
+		},
+		"command": "expand_tabs",
+		"keys": [
+			"alt+super+z"
+		]
+	},
+	{
+		"command": "pep8_autoformat",
+		"keys": [
+			"alt+super+r"
+		]
+	},
+	{
+		"command": "prettyjson",
+		"keys": [
+			"alt+super+p"
+		]
+	},
+	{
+		"command": "tag_indent_document",
+		"keys": [
+			"alt+super+i"
+		]
+	},
+	{
+		"args": {
+			"action": "beautify"
+		},
+		"command": "sass_beautify",
+		"keys": [
+			"alt+super+b"
+		]
+	},
+	{
+		"command": "fix_js_style",
+		"keys": [
+			"alt+super+j"
+		]
+	},
+	{
+		"args": {
+			"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+		},
+		"command": "set_file_type",
+		"keys": [
+			"ctrl+alt+super+d"
+		]
+	},
+	{
+		"args": {
+			"set_translate_tabs": false
+		},
+		"command": "unexpand_tabs",
+		"keys": [
+			"alt+super+x"
+		]
+	}
 ]
