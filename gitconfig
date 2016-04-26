@@ -23,6 +23,7 @@
     cm   = commit -m
     cam  = commit -am
     co   = checkout
+    cp   = cherry-pick
     dc   = diff --cached
     d    = diff
     dns  = diff --name-status
