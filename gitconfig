@@ -149,3 +149,5 @@
 	insteadOf = git://
 [rebase]
 	autostash = true
+[url "https://"]
+	insteadOf = git://
