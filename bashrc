@@ -204,10 +204,9 @@ ${COLOR_OFF}\
     fi
 
     ## Point to Java files
-    if [[ -z /usr/libexec/java_home ]]; then
-        export JAVA_HOME=$(/usr/libexec/java_home)
-        # export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-        # export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
+    JAVA_HOME=$(/usr/libexec/java_home)
+    if [[ -d "$JAVA_HOME" ]]; then
+        export JAVA_HOME
 
         ## Add classpath for Clojure
         export CLASSPATH=${CLASSPATH}:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
