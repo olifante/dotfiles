@@ -4,7 +4,7 @@
 ## for examples
 
 ## If not running interactively, don't do anything
-if [[ -n "$PS1" ]] ; then
+if [[ -n "${PS1}" ]] ; then
     ## append to the history file, don't overwrite it
     shopt -s histappend
 
@@ -33,8 +33,8 @@ if [[ -n "$PS1" ]] ; then
         SSH_AUTH_SOCK="${SSHDIR}/.ssh-agent-socket"
         export SSHDIR SSH_AUTH_SOCK
 
-        if [ ! -S "$SSH_AUTH_SOCK" ]; then
-            ssh-agent -a "$SSH_AUTH_SOCK"
+        if [ ! -S "${SSH_AUTH_SOCK}" ]; then
+            ssh-agent -a "${SSH_AUTH_SOCK}"
             ssh-add
         fi
     fi
@@ -62,8 +62,8 @@ if [[ -n "$PS1" ]] ; then
     fi
 
     GIT_COMPLETION="/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
-    if [[ -s "$GIT_COMPLETION" ]]; then
-        source "$GIT_COMPLETION"
+    if [[ -s "${GIT_COMPLETION}" ]]; then
+        source "${GIT_COMPLETION}"
     fi
 
     ## If you often cd into large repos, the following flags might slow you down.
@@ -82,7 +82,7 @@ if [[ -n "$PS1" ]] ; then
         fi
         export GIT_BRANCH='$(echo $GIT)'
         ## Are dotfiles clean?
-        "$HOME/bin/dotfiles"
+        "${HOME}/bin/dotfiles"
     else
         ## git not found
         export PROMPT_COMMAND=""
@@ -106,7 +106,7 @@ if [[ -n "$PS1" ]] ; then
         ## set it to 'yes' if you want colored prompt
         color_prompt=yes
 
-        if [ "$color_prompt" = yes ]; then
+        if [ "${color_prompt}" = yes ]; then
             # Colors ('[1;' for bold and '[0;' for non-bold)
             local          RED="\[\e[0;31m\]"
             local        GREEN="\[\e[0;32m\]"
@@ -163,8 +163,8 @@ ${COLOR_OFF}\
 
     ## enable color support of ls and also add handy aliases
     if [ -x /usr/bin/dircolors ]; then
-        if [ -r "$HOME/.dircolors" ]; then
-            eval "$(dircolors -b $HOME/.dircolors)"
+        if [ -r "${HOME}/.dircolors" ]; then
+            eval "$(dircolors -b ${HOME}/.dircolors)"
         else
             eval "$(dircolors -b)"
         fi
@@ -178,15 +178,15 @@ ${COLOR_OFF}\
     ## You may want to put all your additions into a separate file like
     ## ~/.bash_aliases, instead of adding them here directly.
     ## See /usr/share/doc/bash-doc/examples in the bash-doc package.
-    BASH_ALIASES="$HOME/.bash_aliases"
-    if [ -f "$BASH_ALIASES" ]; then
-        source "$BASH_ALIASES"
+    BASH_ALIASES="${HOME}/.bash_aliases"
+    if [ -f "${BASH_ALIASES}" ]; then
+        source "${BASH_ALIASES}"
     fi
 
     ## This is a good place to source rvm v v v (loads RVM into a shell session).
-    RVM="$HOME/.rvm/scripts/rvm"
-    if [[ -s "$RVM" ]]; then
-        source "$RVM"
+    RVM="${HOME}/.rvm/scripts/rvm"
+    if [[ -s "${RVM}" ]]; then
+        source "${RVM}"
     fi
 
     ## Define virtualenv variables
@@ -210,43 +210,43 @@ ${COLOR_OFF}\
         # export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
 
         ## Add classpath for Clojure
-        export CLASSPATH=$CLASSPATH:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
+        export CLASSPATH=${CLASSPATH}:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
     fi
 
 
-    export PYTHONSTARTUP=$HOME/.pythonrc.py
+    export PYTHONSTARTUP=${HOME}/.pythonrc.py
 
     ## Define variables for Cappuccino development
     export NARWHAL_ENGINE=jsc
-    export CAPP_BUILD="$HOME/git/cappuccino/Build"
+    export CAPP_BUILD="${HOME}/git/cappuccino/Build"
 
     ## Load git token
-    GITHUBCONFIG="$HOME/.githubconfig.sh"
-    if [ -x "$GITHUBCONFIG" ]; then
-        source "$GITHUBCONFIG"
+    GITHUBCONFIG="${HOME}/.githubconfig.sh"
+    if [ -x "${GITHUBCONFIG}" ]; then
+        source "${GITHUBCONFIG}"
     fi
 
     ## If brew found
     hash brew &> /dev/null
     if [ $? -eq 0 ]; then
         ## Load z, a smart cd that learns your favorite directories
-        Z_SCRIPT="$HOME/homebrew/etc/profile.d/z.sh"
-        if [ -x "$Z_SCRIPT" ]; then
+        Z_SCRIPT="${HOME}/homebrew/etc/profile.d/z.sh"
+        if [ -x "${Z_SCRIPT}" ]; then
             ## install with "brew install z"
-            source "$Z_SCRIPT"
+            source "${Z_SCRIPT}"
         fi
         ## Load programmable bash completion
-        BASH_COMPLETION="$HOME/homebrew/etc/bash_completion"
-        if [ -f "$BASH_COMPLETION" ] && ! shopt -oq posix; then
+        BASH_COMPLETION="${HOME}/homebrew/etc/bash_completion"
+        if [ -f "${BASH_COMPLETION}" ] && ! shopt -oq posix; then
             ## install with "brew install bash_completion"
-            source "$BASH_COMPLETION"
+            source "${BASH_COMPLETION}"
         fi
     fi
 
     ## Activate django bash completion
-    DJANGO_BASH_COMPLETION="$HOME/bin/django_bash_completion"
-    if [[ -f "$DJANGO_BASH_COMPLETION" ]]; then
-        source "$DJANGO_BASH_COMPLETION"
+    DJANGO_BASH_COMPLETION="${HOME}/bin/django_bash_completion"
+    if [[ -f "${DJANGO_BASH_COMPLETION}" ]]; then
+        source "${DJANGO_BASH_COMPLETION}"
     fi
 
     ## Use vim instead of vi if available
@@ -256,8 +256,8 @@ ${COLOR_OFF}\
     fi
 
     ## Set the EDITOR variable
-    SUBLIME_SHORTCUT="$HOME/dotfiles/bin/subl"
-    if [ -x "$SUBLIME_SHORTCUT" ]; then
+    SUBLIME_SHORTCUT="${HOME}/dotfiles/bin/subl"
+    if [ -x "${SUBLIME_SHORTCUT}" ]; then
         export EDITOR=subl
         alias sd='subl .'
     else
@@ -286,10 +286,10 @@ use_env() {
 }
 
 export EC2_REGION=eu-west-1
-export EC2_PRIVATE_KEY=$HOME/.ssh/s2m.pem
-export EC2_CERT=$HOME/.ssh/
-source "$HOME/homebrew/Cellar/autoenv/0.1.0/activate.sh"
-export GOPATH=$HOME/go
+export EC2_PRIVATE_KEY=${HOME}/.ssh/s2m.pem
+export EC2_CERT=${HOME}/.ssh/
+source "${HOME}/homebrew/Cellar/autoenv/0.1.0/activate.sh"
+export GOPATH=${HOME}/go
 export HOMEBREW_GITHUB_API_TOKEN=fef82c4d96976234c2895ea3ed6c4f500523cc85
 
 complete -C aws_completer aws
