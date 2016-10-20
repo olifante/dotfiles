@@ -10,10 +10,6 @@ prepend_to_path() {
     fi
 }
 
-code () {
-    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*
-}  
-
 prepend_to_path /usr/local/bin
 prepend_to_path /usr/bin
 prepend_to_path /bin
