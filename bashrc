@@ -3,6 +3,8 @@
 ## see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 ## for examples
 
+echo "sourcing bashrc"
+
 ## If not running interactively, don't do anything
 if [[ -n "${PS1}" ]] ; then
     ## append to the history file, don't overwrite it

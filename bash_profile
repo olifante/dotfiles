@@ -1,3 +1,5 @@
+echo "sourcing bash profile"
+
 append_to_path() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
         PATH="${PATH:+"$PATH:"}$1"
@@ -31,10 +33,13 @@ export PATH
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
-# set -o vi
-
 # source /usr/local/bin/virtualenvwrapper.sh
 
-if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
+if which rbenv > /dev/null; then
+    eval "$(rbenv init -)"
+fi
+
+# Load user profile file
+if [ -f ~/.profile ]; then
+    source ~/.profile
 fi
