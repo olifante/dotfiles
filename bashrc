@@ -257,10 +257,12 @@ ${COLOR_OFF}\
     fi
 
     ## Set the EDITOR variable
+    CODE_SHORTCUT="/usr/local/bin/code"
     SUBLIME_SHORTCUT="${HOME}/dotfiles/bin/subl"
-    if [ -x "${SUBLIME_SHORTCUT}" ]; then
+    if [ -x "${CODE_SHORTCUT}" ]; then
+        export EDITOR=code
+    elif [ -x "${SUBLIME_SHORTCUT}" ]; then
         export EDITOR=subl
-        alias sd='subl .'
     else
         export EDITOR=vi
     fi
