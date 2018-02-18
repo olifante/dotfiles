@@ -1,0 +1,29 @@
+[general]
+ui = ttyui
+accounts = studio38
+maxsyncaccounts = 4
+socktimeout = 60
+
+[Account studio38]
+localrepository = studio38-local
+remoterepository = studio38-remote
+
+[Repository studio38-local]
+type = Maildir
+localfolders = ~/Mail/studio38backup
+
+[Repository studio38-remote]
+type = IMAP
+remotehost = teamserver.studio38.org
+remoteuser = henriques
+remotepass = Hnrqsst38
+
+expunge = no
+folderfilter = lambda foldername: foldername not in ['INBOX.Trash']
+
+ssl=true
+
+#sslcacertfile = /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/test/ssl_cert.pem
+#sslcacertfile = /Users/olifante/Apple System Roots Certificates.pem
+#sslcacertfile = /Users/olifante/homebrew/etc/openssl/cert.pem
+sslcacertfile = /usr/local/etc/openssl/cert.pem
