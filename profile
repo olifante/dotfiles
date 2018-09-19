@@ -63,6 +63,10 @@ if [ -d "/usr/local/opt/go/libexec/bin" ]; then
     PATH="$PATH:/usr/local/opt/go/libexec/bin"
 fi
 
+if [ -d "/Applications/Postgres.app/Contents/Versions/10/bin" ]; then
+    PATH=$PATH:/Applications/Postgres.app/Contents/Versions/10/bin
+fi
+
 export PATH
 
 set -o vi
