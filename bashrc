@@ -206,14 +206,15 @@ ${COLOR_OFF}\
     fi
 
     ## Point to Java files
-    JAVA_HOME=$(/usr/libexec/java_home)
-    if [[ -d "$JAVA_HOME" ]]; then
-        export JAVA_HOME
+    if [[ -x "/usr/libexec/java_home" ]]; then  
+        JAVA_HOME=$(/usr/libexec/java_home)
+        if [[ -d "$JAVA_HOME" ]]; then
+            export JAVA_HOME
 
-        ## Add classpath for Clojure
-        export CLASSPATH=${CLASSPATH}:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
+            ## Add classpath for Clojure
+            export CLASSPATH=${CLASSPATH}:"/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar"
+        fi
     fi
-
 
     export PYTHONSTARTUP=${HOME}/.pythonrc.py
 
@@ -288,10 +289,13 @@ use_env() {
   fi
 }
 
+if [[ -f "${HOME}/homebrew/Cellar/autoenv/0.2.0/activate.sh" ]]; then
+    source "${HOME}/homebrew/Cellar/autoenv/0.2.0/activate.sh"
+fi
+
 export EC2_REGION=eu-west-1
 export EC2_PRIVATE_KEY=${HOME}/.ssh/s2m.pem
 export EC2_CERT=${HOME}/.ssh/
-source "${HOME}/homebrew/Cellar/autoenv/0.2.0/activate.sh"
 export GOPATH=${HOME}/go
 export HOMEBREW_GITHUB_API_TOKEN=fef82c4d96976234c2895ea3ed6c4f500523cc85
 
