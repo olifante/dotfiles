@@ -106,6 +106,9 @@
     ## to allow git to diff UTF-16 files such as Localizable.strings
     ## *.strings diff=localizablestrings
     textconv = "iconv -f utf-16 -t utf-8"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 
 [merge]
     tool = custom_p4merge
@@ -126,6 +129,9 @@
     cmd             = "/Applications/p4merge.app/Contents/Resources/launchp4merge \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$REMOTE\" \"$PWD/$MERGED\""
     keepTemporaries = false
     trustExitCode   = false
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 
 [user]
     name = Tiago Henriques
