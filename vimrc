@@ -123,3 +123,7 @@ set foldmethod=marker " Use {{{ and }}} to define folding blocks
 "ru macros/matchit.vim      " Enable extended % matching
 
 if &diff | syntax off | endif
+if &diff
+    syntax off
+    colorscheme evening
+endif
