@@ -26,6 +26,8 @@
     cp   = cherry-pick
     dc   = diff --cached
     d    = diff
+    ra   = rebase --abort
+    rc   = rebase --continue
     dns  = diff --name-status
     dt   = difftool
     mt   = mergetool
