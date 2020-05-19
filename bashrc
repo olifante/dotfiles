@@ -218,10 +218,6 @@ ${COLOR_OFF}\
 
     export PYTHONSTARTUP=${HOME}/.pythonrc.py
 
-    ## Define variables for Cappuccino development
-    export NARWHAL_ENGINE=jsc
-    export CAPP_BUILD="${HOME}/git/cappuccino/Build"
-
     ## Load git token
     GITHUBCONFIG="${HOME}/.githubconfig.sh"
     if [ -x "${GITHUBCONFIG}" ]; then
