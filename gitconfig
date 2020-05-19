@@ -114,7 +114,7 @@
 	path = 
 
 [merge]
-    tool = custom_p4merge
+	tool = custom_p4merge
     commit = no
     ff = no
     stat = true
@@ -130,7 +130,7 @@
 [mergetool "ecmerge"]
     path = /Applications/ECMerge.app/Contents/MacOS/guimerge
 [mergetool "custom_p4merge"]
-    cmd             = "/Applications/p4merge.app/Contents/Resources/launchp4merge \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$REMOTE\" \"$PWD/$MERGED\""
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \"$PWD/$BASE\" \"$PWD/$LOCAL\" \"$PWD/$REMOTE\" \"$PWD/$MERGED\"
     keepTemporaries = false
     trustExitCode   = false
 [mergetool "sourcetree"]
