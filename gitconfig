@@ -118,6 +118,7 @@
     commit = no
     ff = no
     stat = true
+	conflictstyle = diff3
 [mergetool]
     keepBackup = false
 [mergetool "diffmerge"]
