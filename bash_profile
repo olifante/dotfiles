@@ -23,11 +23,11 @@ append_to_path /usr/local/mysql/bin
 append_to_path /usr/local/opt/go/libexec/bin
 append_to_path /usr/local/share/npm/bin
 append_to_path /usr/share/maven/bin
-append_to_path $HOME/bin
-append_to_path $HOME/.local/bin
-append_to_path $HOME/.cabal/bin
-append_to_path $HOME/go/bin
-append_to_path $HOME/narwhal/bin
+append_to_path "$HOME/bin"
+append_to_path "$HOME/.local/bin"
+append_to_path "$HOME/.cabal/bin"
+append_to_path "$HOME/go/bin"
+append_to_path "$HOME/narwhal/bin"
 
 export PATH
 
