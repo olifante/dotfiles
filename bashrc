@@ -66,7 +66,7 @@ if [[ -n "${PS1}" ]] ; then
 
     GIT_COMPLETION="/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
     if [[ -s "${GIT_COMPLETION}" ]]; then
-        source "${GIT_COMPLETION}"
+        . "${GIT_COMPLETION}"
     fi
 
     ## If you often cd into large repos, the following flags might slow you down.

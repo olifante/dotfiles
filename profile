@@ -15,7 +15,7 @@ echo "sourcing sh profile"
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-        source "$HOME/.bashrc"
+        . "$HOME/.bashrc"
     fi
 fi
 
