@@ -57,6 +57,7 @@ if [[ -n "${PS1}" ]] ; then
     HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
     ## ... or force ignoredups and ignorespace
     HISTCONTROL=ignoreboth
+    export HISTCONTROL
 
     ## make less more friendly for non-text input files, see lesspipe(1)
     if [ -x /usr/bin/lesspipe ]; then
